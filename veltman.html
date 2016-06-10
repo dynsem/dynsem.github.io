@@ -10,6 +10,9 @@
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
+<div class="header">
+<p><a href= "http://dynsem.github.io/"> Dynamic Semantics </a></p>
+</div>
 <h2 id="veltmans-epistemic-modals">Veltman’s Epistemic Modals</h2>
 <h4 id="introduction">Introduction</h4>
 <p>The first few pages of <span class="citation">Veltman (1996)</span> provides a simple test semantics for ‘might’ that has become hugely influential in the literature on epistemic modals and indicative conditionals. Here I present, first, the actual semantics Veltman gives, and, second, a more standard variant of it assumed in the literature. I then comment on some features of the semantics, including its relationship to treatment of epistemic modality in <span class="citation">Yalcin (2007)</span>.</p>
@@ -26,7 +29,7 @@
 <p>(<em>or, equivalently:</em></p>
 <p><span class="math inline">\(c[\Diamond \phi] = \begin{cases} c \text{,  if } c[\phi] \neq \emptyset \\ \emptyset \text{,  otherwise} \end{cases}\)</span>)</p>
 <h4 id="standard-modifications">Standard modifications</h4>
-<p>Veltman’s semantics both does not explicitly define ‘must’ as the dual of ‘might’ and it provides a non-standard dynamic semantic entry for conjunction: merely intersecting the result of the two updates rather than having consecutive updates. Standardly, we would view conjunction and epistemic necessity modals as follows:</p>
+<p>Veltman’s semantics does not explicitly define ‘must’ as the dual of ‘might’ and it provides a non-standard dynamic semantic entry for conjunction: merely intersecting the result of the two updates rather than having consecutive updates. Standardly, we would view conjunction and epistemic necessity modals as follows:</p>
 <p><span class="math inline">\(c[\phi \land \psi ] = (c[\phi])c[\psi]\)</span></p>
 <p><span class="math inline">\(c[\Box \phi] = c [\lnot \Diamond \lnot \phi] = \{ w \in c : c[\phi] = c \}\)</span></p>
 <p>(<em>or, equivalently:</em></p>
@@ -54,13 +57,30 @@
 <li>Suppose it’s raining and I don’t know it’s raining.</li>
 </ol>
 <p>This data would seem to be straightforwardly explained by Veltman’s semantics for epistemic modals: as the <span class="math inline">\(\lnot p \land \Diamond p\)</span> is not a coherent and hence it cannot be the content of a suppositional state. (Assuming ‘suppose <span class="math inline">\(\phi\)</span>’ is an instruction to enter a suppositional state with content <span class="math inline">\(\phi\)</span>.)</p>
+<h4 id="test-semantics-indicative-conditionals">Test semantics indicative conditionals</h4>
+<p><span class="citation">Gillies (2004)</span> gives a test semantics for indicative conditionals modelled on Veltman’s semantics for epistemic modals. The basic ideas is that an indicative conditional is a test restricted to the context after the antecedent has been applied.</p>
+<p><span class="math inline">\(c[\phi \to \psi] = \{w \in c : c[\phi][\psi] = c[\phi]\}\)</span></p>
+<p><em>or, equivalently</em></p>
+<p><span class="math inline">\(c[\phi \to \psi] = \begin{cases} c \text{,  if } c[\phi][\psi] = c[\phi] \\ \emptyset \text{,  otherwise} \end{cases}\)</span></p>
+<h4 id="understanding-tests">Understanding tests</h4>
+<p>The use of tests in dynamic semantics leads to pressing questions about how the conversational effect of dynamic sematnic values is to be understood. Surely it is not the case that conversations where tests fail actually go to the absurd (empty) context. Rather we must supplement our dynamic semantics with a kind of pragmatic story about how tests are used by speakers to convey information or otherwise communicate.</p>
+<h4 id="odd-embeddings">Odd Embeddings</h4>
+<p>As noted in <span class="citation">Klinedinst and Rothschild (2014)</span> there are some embeddings of Veltman’s epistemic modals that have unexpected semantic values. For example, consider the negation of an epistemic contradiction <span class="math inline">\(\lnot (\Diamond p \land \lnot p)\)</span>. This does not act as a tautology as you might expect. It is a fixed point of both any context in which <span class="math inline">\(p\)</span> holds throughout the context and any context in which <span class="math inline">\(p\)</span> fails throughout the context.</p>
+<h4 id="comparison-with">Comparison with </h4>
+<p>See this <a href="vy.html">note</a> for a comparison of Yalcin and Veltman, using the version of Yalcin in </p>
 <h3 id="bibliography" class="unnumbered">Bibliography</h3>
 <div id="refs" class="references">
+<div id="ref-GilliesEpistemic">
+<p>Gillies, Anthony. 2004. “Epistemic Conditionals and Conditional Epstemics.” <em>Nous</em> 38 (4): 585–616. doi:<a href="https://doi.org/10.1111/j.0029-4624.2004.00485.x">10.1111/j.0029-4624.2004.00485.x</a>.</p>
+</div>
+<div id="ref-KlinedinstRothschildEC">
+<p>Klinedinst, Nathan, and Daniel Rothschild. 2014. “Epistemic Contradictions.” <a href="http://danielrothschild.com/epistemiccontradictions.pdf" class="uri">http://danielrothschild.com/epistemiccontradictions.pdf</a>.</p>
+</div>
 <div id="ref-VeltmanDefaults">
 <p>Veltman, Frank. 1996. “Defaults in Update Semantics.” <em>Journal of Philosophical Logic</em> 25 (3): 221–61. doi:<a href="https://doi.org/10.1007/BF00248150">10.1007/BF00248150</a>.</p>
 </div>
 <div id="ref-YalcinEpistemic">
-<p>Yalcin, Seth. 2007. “Epistemic Modals.” <em>Mind</em> 116: 983–1026.</p>
+<p>Yalcin, Seth. 2007. “Epistemic Modals.” <em>Mind</em> 116: 983–1026. doi:<a href="https://doi.org/10.1093/mind/fzm983">10.1093/mind/fzm983</a>.</p>
 </div>
 </div>
 </body>
