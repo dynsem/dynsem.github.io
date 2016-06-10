@@ -5,16 +5,16 @@
 [Daniel Rothschild](http://danielrothschild.com/)
 
 
-#### About
+##### About
 
-_Dynamics of Conversation_ is an AHRC funded project (Grant # AH/M009602/1).
+_Dyna#mics of Conversation_ is an AHRC funded project (Grant # AH/M009602/1).
 
 This site includes both information about dynamic semantics, links to my papers on dynamics, and lists of the events associated with the project.
 
 
 
 
-#### Explanation of major dynamic systems
+##### Explanation of major dynamic systems
 
 The following pages provide brief introductions to some of the major dynamic systems in the literature along with discussion of some of the empirical and conceptual issues surrounding them.
 
@@ -24,7 +24,7 @@ The following pages provide brief introductions to some of the major dynamic sys
 
 
 
-#### Events
+##### Events
 
 - [DynSem Berlin 2016](http://www.zas.gwz-berlin.de/workshop_dynsem.html)
 - DynSem Oxford 2017?

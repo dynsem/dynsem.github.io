@@ -7,7 +7,7 @@ modification of Yalcin’s semantics from @KlinedinstRothschildConnectives
 is used as well as the standard modification of Veltman’s semantics
 discussed.
 
-#### Basic assumptions {#basic-assumptions .unnumbered}
+##### Basic assumptions {#basic-assumptions .unnumbered}
 
 
 We assume again a language $\mathcal{L}$ syntax of propositional logic
@@ -23,7 +23,7 @@ truth-value (i.e.
 ${[\hspace{-.02in}[{\cdot}]\hspace{-.02in}]}: \mathcal L  \times W \times \mathcal P (W) \to  \{0,1\}$).
 We then prove that both systems induce the same ‘updates’.
 
-#### Modified Veltman semantics {#veltmans-semantics .unnumbered}
+##### Modified Veltman semantics {#veltmans-semantics .unnumbered}
 
 
 $c[a] = c \cap {[\hspace{-.02in}[{a}]\hspace{-.02in}]}$
@@ -38,7 +38,7 @@ $c[\Box \phi] = c$, if $c[\phi] = c$, otherwise $\emptyset$
 
 $c[\Diamond \phi] = c[\lnot \Box \lnot  \phi]$
 
-#### Modified Yalcin Semantics {#static-semantics .unnumbered}
+##### Modified Yalcin Semantics {#static-semantics .unnumbered}
 
 ${[\hspace{-.02in}[{A}]\hspace{-.02in}]}^{w, s}$ is true iff $w$ is in
 ${[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}$.
@@ -68,7 +68,7 @@ $\phi$, it is defined as follows:
 
 $c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]} = \{w \in c: {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c} \textrm{ is true}\}$
 
-#### Equivalence {#equivalence .unnumbered}
+##### Equivalence {#equivalence .unnumbered}
 
 
 The following limited equivalence statement may be made between the two

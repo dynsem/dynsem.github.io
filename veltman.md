@@ -4,11 +4,11 @@
 
 
 
-#### Introduction
+##### Introduction
 
 The first few pages of @VeltmanDefaults provides a simple test semantics for 'might' that has become hugely influential in the literature on epistemic modals and indicative conditionals.  Here I present, first, the actual semantics Veltman gives, and, second, a more standard variant of it assumed in the literature.  I then comment on some features of the semantics, including its relationship to treatment of epistemic modality in @YalcinEpistemic.  
 
-#### Preliminaries
+##### Preliminaries
 
 Assume a set of _worlds_, $W$.  Contexts (sample $c$) are just sets of worlds.  Atomic formulae $a \ldots z$ are assigned sets of worlds by the interpretation function $I : A \to \mathcal{P}(W)$.
 
@@ -34,7 +34,7 @@ $c[\Diamond \phi] =  \begin{cases}
 c \text{,  if } c[\phi] \neq \emptyset \\
 \emptyset \text{,  otherwise} \end{cases}$)
 
-#### Standard modifications
+##### Standard modifications
 
 Veltman's semantics does not explicitly define 'must' as the dual of 'might' and it provides a non-standard dynamic semantic entry for conjunction: merely intersecting the result of the two updates rather than having consecutive updates. Standardly, we would view conjunction and epistemic necessity modals as follows:
 
@@ -49,7 +49,7 @@ c \text{,  if } c[\phi] \neq c \\
 \emptyset \text{,  otherwise} \end{cases}$)
 
 
-#### Consistency and coherence
+##### Consistency and coherence
 
 For a sequence of updates $\phi_1 \ldots \phi_n$ we can define whether it is _consistent_ or _coherent_ as follows:
 
@@ -71,7 +71,7 @@ where $j_w$ are all the worlds consistent with John's beliefs at $w$.
 
 We now can see that $c[\text{John believes }\Diamond a ] = \{ w \in c : j_w \cap a \neq \emptyset \}$ = those worlds in $c$ where John has a belief world in which $a$ is true.  See @YalcinEpistemic for arguments that this is a good result.
 
-#### Epistemic contradictions
+##### Epistemic contradictions
 
 Note that the sequence $a, \Diamond \lnot a$ is neither consistent nor coherent, while the sequence $\Diamond \lnot a, a$ is consistent but not coherent.
 
@@ -90,7 +90,7 @@ This data would seem to be straightforwardly explained by Veltman's semantics fo
 
 
 
-#### Test semantics indicative conditionals
+##### Test semantics indicative conditionals
 
 @GilliesEpistemic gives a test semantics for indicative conditionals modelled on Veltman's semantics for epistemic modals.  The basic ideas is that an indicative conditional is a test restricted to the context after the antecedent has been applied.
 
@@ -102,23 +102,23 @@ $c[\phi \to \psi] =  \begin{cases}
 c \text{,  if } c[\phi][\psi] = c[\phi] \\
 \emptyset \text{,  otherwise} \end{cases}$
 
-#### Understanding tests
+##### Understanding tests
 
 The use of tests in dynamic semantics leads to pressing questions about how the conversational effect of dynamic sematnic values is to be understood.  Surely it is not the case that conversations where tests fail actually go to the absurd (empty) context.  Rather we must supplement our dynamic semantics with a kind of pragmatic story about how tests are used by speakers to convey information or otherwise communicate.
 
 
-#### Odd Embeddings
+##### Odd Embeddings
 
 
 As noted in @KlinedinstRothschildEC there are some embeddings of Veltman's epistemic modals that have unexpected semantic values.  For example, consider the negation of an epistemic contradiction $\lnot (\Diamond p \land \lnot p)$.  This does not act as a tautology as you might expect.  It is a fixed point of both any context in which $p$ holds throughout the context and any context in which $p$ fails throughout the context.  
 
 
-#### Comparison with \citet{YalcinEpistemic}
+##### Comparison with @YalcinEpistemic
 
 See this [note](vy.html) for a comparison of Yalcin and Veltman, using the version of Yalcin in @KlinedinstRothschildConnectives
 
 
 
 
-###Bibliography
+#### Bibliography
 
