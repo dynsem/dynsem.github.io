@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="/Users/Daniel/Dropbox/Dynamics Website/my.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h2 id="veltmans-epistemic-modals">Veltman’s Epistemic Modals</h2>
+<h4 id="introduction">Introduction</h4>
+<p>The first few pages of <span class="citation">Veltman (1996)</span> provides a simple test semantics for ‘might’ that has become hugely influential in the literature on epistemic modals and indicative conditionals. Here I present, first, the actual semantics Veltman gives, and, second, a more standard variant of it assumed in the literature. I then comment on some features of the semantics, including its relationship to treatment of epistemic modality in <span class="citation">Yalcin (2007)</span>.</p>
+<h4 id="preliminaries">Preliminaries</h4>
+<p>Assume a set of <em>worlds</em>, <span class="math inline">\(W\)</span>. Contexts (sample <span class="math inline">\(c\)</span>) are just sets of worlds. Atomic formulae <span class="math inline">\(a \ldots z\)</span> are assigned sets of worlds by the interpretation function <span class="math inline">\(I : A \to \mathcal{P}(W)\)</span>.</p>
+<h4 id="veltmans-dynamic-semantics">Veltman’s dynamic semantics</h4>
+<p>where <span class="math inline">\(\phi\)</span> is atomic:</p>
+<p><span class="math inline">\(c[\phi] = c \cap I(\phi)\)</span></p>
+<p>for any <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\psi\)</span>:</p>
+<p><span class="math inline">\(c[\lnot \phi] = c \backslash c[\phi]\)</span></p>
+<p><span class="math inline">\(c[\phi \land \psi ] = c[\phi] \cap c[\psi]\)</span></p>
+<p><span class="math inline">\(c[\phi \lor \psi ] = c[\phi] \cup c[\psi]\)</span></p>
+<p><span class="math inline">\(c[\Diamond \phi] = \{ w \in c : c[\phi] \neq \emptyset \}\)</span></p>
+<p>(<em>or, equivalently:</em></p>
+<p><span class="math inline">\(c[\Diamond \phi] = \begin{cases} c \text{,  if } c[\phi] \neq \emptyset \\ \emptyset \text{,  otherwise} \end{cases}\)</span>)</p>
+<h4 id="standard-modifications">Standard modifications</h4>
+<p>Veltman’s semantics both does not explicitly define ‘must’ as the dual of ‘might’ and it provides a non-standard dynamic semantic entry for conjunction: merely intersecting the result of the two updates rather than having consecutive updates. Standardly, we would view conjunction and epistemic necessity modals as follows:</p>
+<p><span class="math inline">\(c[\phi \land \psi ] = (c[\phi])c[\psi]\)</span></p>
+<p><span class="math inline">\(c[\Box \phi] = c [\lnot \Diamond \lnot \phi] = \{ w \in c : c[\phi] = c \}\)</span></p>
+<p>(<em>or, equivalently:</em></p>
+<p><span class="math inline">\(c[\Box \phi] = \begin{cases} c \text{,  if } c[\phi] \neq c \\ \emptyset \text{,  otherwise} \end{cases}\)</span>)</p>
+<h4 id="consistency-and-coherence">Consistency and coherence</h4>
+<p>For a sequence of updates <span class="math inline">\(\phi_1 \ldots \phi_n\)</span> we can define whether it is <em>consistent</em> or <em>coherent</em> as follows:</p>
+<p><span class="math inline">\(\phi_1 \ldots \phi_n\)</span> is <em>consistent</em> if there exists a context <span class="math inline">\(c\)</span>, such that <span class="math inline">\(c[\phi_1] \ldots [\phi_n] \neq \emptyset\)</span>.</p>
+<p><span class="math inline">\(\phi_1 \ldots \phi_n\)</span> is <em>coherent</em> if there exists a context <span class="math inline">\(c\)</span>, such that <span class="math inline">\(c[\phi_1] \ldots [\phi_n] = c\)</span>.</p>
+<p>We can extend these definition to single formulas in the usual way. With dynamic conjunction the consistency and/or coherence of a sequence is equivalent to the consistency and/or coherence of the conjunction of its members in sequential order.</p>
+<h4 id="belief">Belief</h4>
+<p>What is it to believe a CCP in this semantic system? If a belief state, <span class="math inline">\(s\)</span> determines a set of worlds <span class="math inline">\(b_s\)</span> consistent with beliefs at <span class="math inline">\(s\)</span> then <span class="math inline">\(b_s\)</span> counts as believing a CCP <span class="math inline">\(\phi\)</span> iff <span class="math inline">\(b_s[\phi] = b_s\)</span> (i.e. <span class="math inline">\(b_s\)</span> is a fixed point of <span class="math inline">\(\phi\)</span>). We can extend this to belief in a sequence of updates in the expected way: <span class="math inline">\(b_s\)</span> counts as believing the sequence <span class="math inline">\(\phi_1 \ldots \phi_n\)</span> iff <span class="math inline">\(b_s[\phi_1] \ldots [\phi_n] = b_s\)</span>. Note that belief in a sequence is only possible if the sequence is coherent.</p>
+<p>We can extend the language to include belief attributions as follows:</p>
+<p><span class="math inline">\(c[\text{John believes } \phi] = \{ w \in c : j_w [\phi] = j_w \}\)</span></p>
+<p>where <span class="math inline">\(j_w\)</span> are all the worlds consistent with John’s beliefs at <span class="math inline">\(w\)</span>.</p>
+<p>We now can see that <span class="math inline">\(c[\text{John believes }\Diamond a ] = \{ w \in c : j_w \cap a \neq \emptyset \}\)</span> = those worlds in <span class="math inline">\(c\)</span> where John has a belief world in which <span class="math inline">\(a\)</span> is true. See <span class="citation">Yalcin (2007)</span> for arguments that this is a good result.</p>
+<h4 id="epistemic-contradictions">Epistemic contradictions</h4>
+<p>Note that the sequence <span class="math inline">\(a, \Diamond \lnot a\)</span> is neither consistent nor coherent, while the sequence <span class="math inline">\(\Diamond \lnot a, a\)</span> is consistent but not coherent.</p>
+<p>Veltman and others have made much of the order sensitivity of consistency. However, it is not clear to me what important empirical implications this has.</p>
+<p><span class="citation">Yalcin (2007)</span> noted that <em>epistemic contradictions</em> of the form <span class="math inline">\(p \land \Diamond \lnot p\)</span> or conversely <span class="math inline">\(\Diamond \lnot p \land p\)</span> seem not only unassertable (as to be expected as they are Moorean paradoxical), but also do not embed well in various environments such as under ‘suppose’:</p>
+<ol class="example" style="list-style-type: decimal">
+<li>? Suppose it’s raining and it might not be raining.</li>
+</ol>
+<p>Compare:</p>
+<ol start="2" class="example" style="list-style-type: decimal">
+<li>Suppose it’s raining and I don’t know it’s raining.</li>
+</ol>
+<p>This data would seem to be straightforwardly explained by Veltman’s semantics for epistemic modals: as the <span class="math inline">\(\lnot p \land \Diamond p\)</span> is not a coherent and hence it cannot be the content of a suppositional state. (Assuming ‘suppose <span class="math inline">\(\phi\)</span>’ is an instruction to enter a suppositional state with content <span class="math inline">\(\phi\)</span>.)</p>
+<h3 id="bibliography" class="unnumbered">Bibliography</h3>
+<div id="refs" class="references">
+<div id="ref-VeltmanDefaults">
+<p>Veltman, Frank. 1996. “Defaults in Update Semantics.” <em>Journal of Philosophical Logic</em> 25 (3): 221–61. doi:<a href="https://doi.org/10.1007/BF00248150">10.1007/BF00248150</a>.</p>
+</div>
+<div id="ref-YalcinEpistemic">
+<p>Yalcin, Seth. 2007. “Epistemic Modals.” <em>Mind</em> 116: 983–1026.</p>
+</div>
+</div>
+</body>
+</html>
