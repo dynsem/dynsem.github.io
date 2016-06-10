@@ -1,5 +1,5 @@
-Yalcin and Veltman  {#comparison .unnumbered}
----
+#### [Epistemic Modals](veltman.html):Yalcin and Veltman  {#comparison .unnumbered}
+
 
 This appendix explores the relationship between @YalcinEpistemic andl
 Veltman’s [-@VeltmanDefaults] semantics for epistemic modals. A

@@ -1,12 +1,7 @@
 
-<div class="header">
-<a href= "http://dynsem.github.io/"> Dynamic Semantics </a>
-</div>
 
+#### [Dynamics Semantics](http://dynsem.github.io/): Veltman's Epistemic Modals
 
-
-Veltman's Epistemic Modals
--------
 
 
 #### Introduction
@@ -120,7 +115,7 @@ As noted in @KlinedinstRothschildEC there are some embeddings of Veltman's epist
 
 #### Comparison with \citet{YalcinEpistemic}
 
-See this [note](vy.html) for a comparison of Yalcin and Veltman, using the version of Yalcin in \citet{KlinedinstRothschildConnectives}
+See this [note](vy.html) for a comparison of Yalcin and Veltman, using the version of Yalcin in @KlinedinstRothschildConnectives
 
 
 
