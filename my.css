@@ -180,6 +180,31 @@ html {
   max-width: 100%;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+
 body {
   color: #444;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -199,6 +224,8 @@ h6 {
   font-family: Arimo, Helvetica, sans-serif;
 }
 
+
+
 h1,
 h2,
 h3 {
@@ -216,4 +243,13 @@ blockquote {
 pre,
 code {
   background-color: #fafafa;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
 }
