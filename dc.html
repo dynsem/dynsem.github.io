@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="http://dynsem.github.io/my.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<ul class="navigation">
+<li class="navigation">
+<a class = "navigation"  href="index.html">Home</a>
+</li>
+<li class="navigation">
+<a class = "active navigation" href="dc.html">Dynamic Contexts</a>
+</li>
+<li class="navigation" style="float:right">
+<a  class = "navigation" href="http://danielrothschild.com/">Daniel Rothschild</a>
+</li>
+</ul>
+<h4 id="dynamic-contexts">Dynamic contexts</h4>
+<h5 id="propositional-common-grounds">Propositional common grounds</h5>
+<p>What formal object should we use to represent contexts in semantics (whether dynamic or not). In the propositional case, following <span class="citation">Stalnaker (1974; 1978)</span>, we can treat the context as a set of propositions in the <em>common ground</em>, i.e. those that are mutually accepted for the purposes of conversation. When modelling contexts, however, we do not always keep track individually of every proposition commonly accepted. Rather we often use the <em>context set</em>, instead. The context set is just the set of all worlds that are compatible with every proposition in the common ground. If propositions themselves are identified with sets of worlds (the worlds they are true at) then the context set is just the intersection of all the worlds in the common ground.</p>
+<h5 id="propositional-updates">Propositional updates</h5>
+<p>Given this, propositional, worldly, notion of context we can easily define the update assocated with an assertion as follows (again following Stalnaker). If in a context <span class="math inline">\(c\)</span> a sentence <span class="math inline">\(s\)</span> is asserted and <span class="math inline">\(s\)</span> expresses the proposition <span class="math inline">\(p\)</span>, then the new common ground after <span class="math inline">\(s\)</span> has been accepted is just the old common ground <span class="math inline">\(c\)</span> intersected with <span class="math inline">\(p\)</span>, <span class="math inline">\(c\cap p\)</span>. This is a <em>static</em> notion of conversational dynamics. That is we assume a <em>static semantics</em> in which sentences are assocated with propositions.</p>
+<blockquote>
+<p>Once the context is adjusted to accommodate the information that the particular utterance has produced, how does the CONTENT of an assertion alter the context? My suggestion is a very simple one: To make an assertion is to reduce the context set in a particular way, provided that there are no objections from the other participants in the conversation. The particular way in which the context set is reduced is that all of the possible situations incompatible with what is said are eliminated. To put it a slightly different way, the essential effect of an assertion is to change the presuppositions of the participants in the conversation by adding the content of what is asserted to what is presupposed. This effect is avoided only if the assertion is rejected. <span class="citation">(Stalnaker 1978, 323)</span></p>
+</blockquote>
+<h5 id="contexts-with-file-structure">Contexts with file structure</h5>
+<p><span class="citation">Heim (1982)</span> enriches Stalnaker’s notion of content with information about what she calls, following <span class="citation">Karttunen (1976)</span>, <em>discourse referents</em>. The file metaphor suggest a system in which we keep dossiers of information about a series of unspecified individuals. Heim differentiates dossiers by number, but we will rather assume that each dossier is associated with an individual. A sample dossier, then, might be something like this:</p>
+<blockquote>
+<p>Individuals <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>: <span class="math inline">\(x\)</span> is a man, <span class="math inline">\(y\)</span> is a dog, <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>.</p>
+</blockquote>
+<p>What sort of formal object should we use to keep track of such information? This is actually a somewhat complex question to ask as it is not clear what kind of information is in here. If we just want to keep track of the information that some individuals <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are such that <span class="math inline">\(x\)</span> is a man <span class="math inline">\(y\)</span> is dog, and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>, then we might just take the sets of worlds where that is so:</p>
+<blockquote>
+<p><span class="math inline">\(P = \{ w: \exists x \exists y:\)</span> <span class="math inline">\(x\)</span> is a man, <span class="math inline">\(y\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
+</blockquote>
+<p>This representation, however, loses the structure of the file system it represents. Heim’s notion is more fine-grained than this, as she wants to keep information about individual discourse referents. Her way of doing this is to equate contexts with what she calls <em>satisfaction sets</em>. A satisfaction set is set of ordered pairs the first member of which is an assignment function (a function from the set of variables <span class="math inline">\(V\)</span> to the domain <span class="math inline">\(D\)</span>) and the second member of which is a world <span class="math inline">\(W\)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> The satisfaction set corresponding to the file described above is as follows:</p>
+<blockquote>
+<p><span class="math inline">\(S = \{ \langle f,w \rangle : f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
+</blockquote>
+<p>Satisfaction sets encode both informationa about worlds and discourse referents at once. For we can extract a propositional context set <span class="math inline">\(P\)</span> from a satisfaction set <span class="math inline">\(S\)</span>, by simply applying the following function <span class="math inline">\(E\)</span> to <span class="math inline">\(S\)</span>:</p>
+<blockquote>
+<p><span class="math inline">\(E(S) = \{w : \exists f : \langle f,w \rangle \in S\}\)</span></p>
+</blockquote>
+<p>It should be clear that <span class="math inline">\(E\)</span> maps many different satisfaction sets to the same propositional context set. Here are two examples of files that map to <span class="math inline">\(P\)</span>.</p>
+<blockquote>
+<p><span class="math inline">\(S_1 = \{ \langle f,w \rangle : f(y)\)</span> is a man, <span class="math inline">\(f(x)\)</span> is a dog and <span class="math inline">\(y\)</span> owns <span class="math inline">\(x\)</span> in <span class="math inline">\(w \}\)</span><br />
+<span class="math inline">\(S_2 = \{ \langle f,w \rangle : f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>, <span class="math inline">\(f(z)\)</span> is a man in <span class="math inline">\(w \}\)</span></p>
+</blockquote>
+<p>Satisfaction sets, as fine-grained as they are, do not themselves carry sufficient information for some purposes. Consider, first, the most uninformative satifaction set, <span class="math inline">\(T\)</span>, that simply includes all worlds and assignment functions:</p>
+<blockquote>
+<p><span class="math inline">\(T = \{ \langle f,w \rangle : f\)</span> is an assignment function and <span class="math inline">\(w\)</span> is a world<span class="math inline">\(\}\)</span></p>
+</blockquote>
+<p><span class="math inline">\(T\)</span> is also equivalent to this file:</p>
+<blockquote>
+<p><span class="math inline">\(\{ \langle f,w \rangle : f(x) = f(x) \}\)</span></p>
+</blockquote>
+<p>But we might want to be able to talk of a file in which a discourse referent <span class="math inline">\(x\)</span> is introduced even if the file contains no non-trivial information about <span class="math inline">\(x\)</span>. To do this Heim proposes to identify files with pairs of satisfaction sets and <em>domains</em> where domians are simply the set of variables that are active in the file.</p>
+<p>A more perspicuous representation of files is as sets of pairs of <em>partial</em> assignment functions and worlds. A file is a set <span class="math inline">\(F\)</span> such that each element of <span class="math inline">\(F\)</span> is an ordered pair <span class="math inline">\(\langle f, w \rangle\)</span> where and for any two elements <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> the assignment functions associated with <span class="math inline">\(f\)</span> and <span class="math inline">\(y\)</span> have the same domain (i.e. they are defined for the same variables, so have the same degree of partiality).</p>
+<p>Now we treat the uniformative file, <span class="math inline">\(\top\)</span>, as follows, where <span class="math inline">\(\emptyset\)</span> is understood to be the assignment function that is completely undefined.</p>
+<blockquote>
+<p><span class="math inline">\(\top = \{ \langle \emptyset, w \rangle : w\)</span> is a world <span class="math inline">\(\}\)</span></p>
+</blockquote>
+<p>On the other hand the file corresponding to our example would be as follows:</p>
+<blockquote>
+<p><span class="math inline">\(S = \{\langle f,w \rangle :\)</span> the domain of <span class="math inline">\(f\)</span> is <span class="math inline">\(\{ x,y\},\)</span> <span class="math inline">\(f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
+</blockquote>
+<h5 id="bibliography" class="unnumbered">Bibliography</h5>
+<div id="refs" class="references">
+<div id="ref-HeimDiss">
+<p>Heim, Irene. 1982. “The Semantics of Definite and Indefinite Noun Phrases.” PhD thesis, Amherst: University of Massachusetts. <a href="http://semanticsarchive.net/Archive/Tk0ZmYyY/" class="uri">http://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.</p>
+</div>
+<div id="ref-KarttunenDiscourse">
+<p>Karttunen, Lauri. 1976. “Discourse Referents.” In <em>Syntax and Semantics</em>, edited by J. McCawley. Vol. 7. Academic Press.</p>
+</div>
+<div id="ref-StalnakerPresuppositions">
+<p>Stalnaker, Robert. 1974. “Pragmatic Presuppositions.” In <em>Semantics and Philosophy</em>, edited by M. K. Munitz and D. K. Unger, 197–213. NYU.</p>
+</div>
+<div id="ref-StalnakerAssertion">
+<p>———. 1978. “Assertion.” In <em>Syntax and Semantics</em>, edited by P. Cole. Academic Press.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>We assume a constant domain across worlds.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
