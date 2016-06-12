@@ -187,16 +187,24 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
   margin: 0 auto;
-  max-width: 48rem;
+  /*max-width: 48rem;*/
   line-height: 1.45;
-  padding: .25rem;
+ /* padding: .25rem;*/
+}
+
+#main {
+  max-width: 48rem;
+  margin: auto;
+}
+
+#nav {
+    background-color: #333;
 }
 
 .active {
-    background-color: #424242;
+    background-color: #6E6E6E;
     color: black;
 }
-
 
 
 
@@ -205,26 +213,57 @@ ul.navigation {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-
-
+    /*background-color: #333;*/
+    max-width: 49.7rem;
+    margin: auto;
 }
 
 li.navigation {
     float: left;
 }
 
-a.navigation {
-    display: block;
+li a.navigation, .dropbtn {
+    font-size: 0.85rem;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-li a.navigation:hover {
-    background-color: #111;
+li a.navigation:hover, .dropdown:hover .dropbtn {
+    background-color: #3498db;
 }
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+
+
 
 h1,
 h2,
