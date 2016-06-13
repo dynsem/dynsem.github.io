@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="http://dynsem.github.io/my.css">
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div id="nav">
+<ul class = "navigation">
+<li class="navigation">
+<a class = "navigation"  href="index.html">Dynamics of Conversation</a>
+</li>
+<li class="navigation dropdown">
+<a href="#" class="navigation dropbtn">Notes</a>
+<div class="dropdown-content">
+<p><a href="dc.html">Dynamic Contexts</a> <a href="hdpl.html">Heim and Dynamic Predicate Logic</a> <a href="veltman.html">Veltman’s Epistemic Modals</a> <a href="vy.html">Veltman/Yalcin comparison</a></p>
+</div>
+<li class="navigation active">
+<a class = "navigation" href="vy.html">Veltman/Yalcin comparison</a>
+</li>
+<li class="navigation" style="float:right">
+<a  class = "navigation" href="http://danielrothschild.com/">Daniel Rothschild</a>
+</li>
+</ul>
+</div>
+<div id="main">
+
+
+<p>Consider these three sentences:</p>
+<ol class="example" type="1">
+<li>John stopped smoking.</li>
+<li>If John used to smoke, then John stopped smoking.</li>
+<li>Either John didn’t use to smoke, or he stopped smoking.</li>
+</ol>
+<p>Sentence (1) presupposes that John used to smoke but neither sentence (2) nor sentence (3) does.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> This is an instance of the pattern of presupposition projection, the way complex expressions inherit or, as in this case, fail to inherit the presuppositions of their parts. Ideally, there would be something relatively simple we could say about <em>why</em> (2) and (3) don’t give rise to the presupposition that (1) does. Saying it has turned out to be surprisingly difficult. In the following <span class="citation" data-cites="RothschildExplaining">(based on Rothschild 2015)</span>, I explain the treatment of Heim’s <span class="citation" data-cites="HeimPresupposition">(1983)</span> presuppositions in dynamic semantics.</p>
+<h5 id="psrules">Common grounds and projection rules</h5>
+<p>One of the marks of linguistic presuppositions is that when a sentence presupposes a proposition an assertion of the sentence seems to take the proposition for granted. We might describe presuppositions by saying that a sentence, <span class="math inline">\(S\)</span>, presupposes a proposition, <span class="math inline">\(p\)</span>, when an assertion of <span class="math inline">\(S\)</span> is only felicitous in a context in which the mutual assumptions of the conversational participants include <span class="math inline">\(p\)</span>. This definition, due to <span class="citation" data-cites="StalnakerPragmaticPresuppositions">Stalnaker (1974)</span> and <span class="citation" data-cites="KarttunenPresupposition">Karttunen (1974)</span>, takes linguistic presupposition to give rise to acceptability conditions on the <em>common ground</em>, the collection of mutually accepted assumptions among conversational participants.Q Here is a more careful description of the framework: in a conversation any utterance is made against the common ground, which we model as the set of worlds not ruled about by the mutual assumptions of the conversational participants. When one asserts a proposition, <span class="math inline">\(a\)</span>, the normal effect, if the audience accepts the assertion, is the removal of the worlds where <span class="math inline">\(a\)</span> is false from the common ground. One way of working presuppositions into this framework is to assume that certain sentences are such that they are only felicitously asserted in certain common grounds. In particular, we say that if a sentence <span class="math inline">\(A\)</span> presupposes <span class="math inline">\(\underline{a}\)</span>, then <span class="math inline">\(A\)</span> is only felicitously assertable in a common ground <span class="math inline">\(c\)</span> if <span class="math inline">\(c\)</span> entails <span class="math inline">\(\underline{a}\)</span>, i.e., <span class="math inline">\(\underline{a}\)</span> is true in every world in <span class="math inline">\(c\)</span> (which we write as <span class="math inline">\(c \models \underline a\)</span>). When it is felicitous, the effect of an assertion of <span class="math inline">\(A\)</span> is to remove certain worlds from the common ground.</p>
+<p>In this framework, due to Stalnaker and Karttunen, the projection problem is the problem of defining what conditions complex sentences put on the common ground in terms of what conditions their parts do. Below are some sample rules we could use to describe the projection behavior in this framework:</p>
+<ol start="4" class="example" type="1">
+<li><span class="math inline">\(b \land A\)</span> is acceptable in <span class="math inline">\(c\)</span> iff <span class="math inline">\(c \models b \to \underline{a}\)</span></li>
+<li><span class="math inline">\(b \lor A\)</span> is acceptable in <span class="math inline">\(c\)</span> iff <span class="math inline">\(c \models \lnot b \to \underline{a}\)</span></li>
+<li><span class="math inline">\(b \to A\)</span> is acceptable in <span class="math inline">\(c\)</span> iff <span class="math inline">\(c \models b \to \underline{a}\)</span></li>
+</ol>
+<p>We can apply these rules to examples such as the following:</p>
+<ol start="7" class="example" type="1">
+<li>John used to smoke and he’s stopped. (@) John didn’t use to smoke, or he’s stopped (<span class="citation" data-cites="bye">(<span class="citeproc-not-found" data-reference-id="bye"><strong>???</strong></span>)</span>) If John used to smoke, then he’s stopped.</li>
+</ol>
+<p>According to the rules (4) to (6) the presuppositions in sentences (7) to (<span class="citation" data-cites="bye">(<span class="citeproc-not-found" data-reference-id="bye"><strong>???</strong></span>)</span>) are trivial. For instance, the presupposition of (7) by rule (4) is <em>if John used to smoke, then he used to smoke</em>. Since this is trivially true the entire sentence is correctly predicted not to presuppose anything.</p>
+<p>These rules can be elaborated into general rules that predict the presupposition of any complex sentence, given the presuppositions of its parts. Such a set of rules would essentially be the <em>filtering</em> rules developed by <span class="citation" data-cites="KarttunenPresuppositions">Karttunen (1973)</span>. There is some debate over the empirical merits of these rules, but I want to put this aside here.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>Suppose rules along the lines of (4) to (6) suffice to describe the pattern of presupposition projection. Merely stating these rules fails entirely to <em>explain</em> why the pattern of presuppositions project can be so described. <span class="citation" data-cites="HeimPresupposition">Heim (1983)</span> was a landmark paper partly because it gave a semantics of presuppositional expressions (and complexes formed out of these) from which these rules of presupposition projection follow. I will outline her account and discuss a major criticism of it, due to Scott Soames and Mats Rooth. They argued that Heim’s semantics has features which effectively amount to stipulations of presupposition projection properties <span class="citation" data-cites="SoamesPresupposition HeimPresupposition2 SchlenkerArticulate">(Soames 1982; Heim 1990; Schlenker 2008)</span>.</p>
+<h5 id="ps">Dynamic semantics</h5>
+<p>I am going to present Heim’s propositional dynamics semantics in a non-standard way, as this will facilitate some of the later discussion.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> While the basic ideas may be familiar to some readers, it is worth skimming through this section to get a sense of the notation.</p>
+<p>The major change in Heim’s dynamic semantics, from the Stalnakerian framework discussed above, is that the meanings of sentences are no longer propositions, sets of possible worlds, but instead ways of changing the common ground. Thus, a sentence has as its semantic value a function from sets of possible worlds to sets of possible worlds (i.e. a function with domain <span class="math inline">\(\mathcal{P}(W)\)</span> and range <span class="math inline">\(\mathcal{P}(W)\)</span>).<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<p>Using this kind of semantic value we can reproduce the Stalnakerian treatment of assertion. Instead of having a sentence <span class="math inline">\(S\)</span> denote a set of possible worlds <span class="math inline">\(p\)</span> we have the sentence denote the function that goes from a common ground <span class="math inline">\(c\)</span> to the intersection of <span class="math inline">\(p\)</span> and <span class="math inline">\(c\)</span>. In other words, a sentence denotes a function that captures what it is to update any common ground with the sentence. Heim named this sort of function a <em>context change potential</em>, or <em>CCP</em> for short.</p>
+<p>Much of the allure of dynamic semantics, in particular the treatment of donkey anaphora, comes from its treatment of variables which a propositional fragment cannot capture. However, most of Heim’s treatment of presupposition projection can be expressed in a propositional fragment. For now I will only discuss the propositional case, and introduce variables and quantifiers later in §[quantification].</p>
+<p>Presuppositional meanings are encoded by <em>partial</em> functions from contexts to contexts. Consider a sentence like <em>John stopped smoking</em>. In a classical semantics we would assign this sentence as its meaning the set of possible worlds where John used to smoke and doesn’t any more. However, in a partial, dynamic semantics we assign this sentence a partial function, <span class="math inline">\(f: \mathcal{P}(W)\to \mathcal{P}(W)\)</span>, such that:</p>
+<ul>
+<li><p><span class="math inline">\(f(x)\)</span> is defined iff John used to smoke in all worlds in <span class="math inline">\(x\)</span></p></li>
+<li><p>where defined $f(x) = { w x: $ John no longer smokes in <span class="math inline">\(w \}\)</span>.</p></li>
+</ul>
+<p>Since <em>John stopped smoking</em> is not defined when the context does not entail that John used to smoked, it is infelicitous in such a context. Thus, the partiality of the CCPs captures their presuppositional behavior.</p>
+<p>It is helpful to note that Heim’s treatment of presuppositions as partially defined CCPs is technically similar to the older tradition of modeling presuppositions with a trivalent semantics. On a trivalent semantics each sentence can be true in some worlds, false in others, and undefined in others. Typically, we say that if a sentence <span class="math inline">\(S\)</span> has a presupposition failure, then it is neither true nor false. So <em>John stopped smoking</em> has the following truth-condition:</p>
+<ul>
+<li><p><em>John stopped smoking</em> is true iff John used to smoke and he doesn’t any longer.</p></li>
+<li><p><em>John stopped smoking</em> is false iff John used to smoke and he still smokes.</p></li>
+<li><p><em>John stopped smoking</em> is neither true nor false iff John didn’t used to smoke.</p></li>
+</ul>
+<p><span class="citation" data-cites="StalnakerPresupposition">Stalnaker (1973)</span> proposed that the following pragmatic rule should govern the assertion of such sentences:<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> If we followed this rule, then <span class="math inline">\(S\)</span> could only result in a felicitous update of <span class="math inline">\(c\)</span> if <span class="math inline">\(c\)</span> entails that <span class="math inline">\(S\)</span> is either true or false. Thus, a trivalent semantics does the same basic thing a CCP semantics does: it formally encodes the presuppositions of sentences in terms of definedness conditions.</p>
+<p>So far, dynamic semantics looks like a different technical framework for expressing what a trivalent semantics does. The interest comes when we introduce the compositional rules for complex sentences. Before we do that, however, we need to state the details of the semantics in a more precise way. We could simply give a semantics for sentences which assigns as values not propositions, but CCPs. However, to facilitate the later discussion, I will introduce a language that includes not just CCPs but also formulas representing contexts or common grounds. So this language will include two parts: 1) the context part for formulas representing common grounds and 2) the CCP part for sentences expressing context change potentials. Properly speaking, then, the only part of the formal language that corresponds to the actual spoken (or written) language is the CCP-part. However, this is just a notational convenience, not itself a substantive assumption.</p>
+<h6 id="syntax">Syntax</h6>
+<ul>
+<li><p>lower-case letters <span class="math inline">\(a, b, c\ldots\)</span> are atomic sentences (these will be used to model contexts)</p></li>
+<li><p>upper-case letters <span class="math inline">\(A, B, C\ldots\)</span> are atomic CCPs (these represent sentences in human language)</p></li>
+<li><p>the set of CCPs is defined as follows:</p>
+<ul>
+<li><p>any atomic CCP is a CCP</p></li>
+<li><p>if <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\psi\)</span> are CCPs then so are <span class="math inline">\(\lnot \phi\)</span>, <span class="math inline">\(\phi \land \psi\)</span>, <span class="math inline">\(\phi \lor \psi\)</span>, and <span class="math inline">\(\phi \to \psi\)</span></p></li>
+</ul></li>
+<li><p>the set of complex sentences is defined as follows:</p>
+<ul>
+<li><p>any atomic sentence is a sentence</p></li>
+<li><p>if <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are sentences then so are <span class="math inline">\(\alpha \land \beta\)</span>, <span class="math inline">\(\alpha \lor \beta\)</span>, and <span class="math inline">\(\alpha \backslash \beta\)</span><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></p></li>
+<li><p>if <span class="math inline">\(\alpha\)</span> is a sentence and <span class="math inline">\(\phi\)</span> is a CCP then <span class="math inline">\(\alpha [\phi]\)</span> is a sentence</p></li>
+</ul></li>
+</ul>
+<p>As noted, the actual complex sentences in this language represent contexts including ones which are combined or updated by CCPs in various ways. So, for instance, <span class="math inline">\(c[A \land B]\)</span> represents the update of the context <span class="math inline">\(c\)</span> by the complex CCP <span class="math inline">\(A \land B\)</span>. It may seem that syntactic rules for combining contexts to get such formulas as <span class="math inline">\(a \land b\)</span> are pointless since contexts themselves are not syntactic objects, but they will come in handy for giving the semantics of complex CCPs.</p>
+<h6 id="partial-semantics">Partial semantics</h6>
+<p>I will use the denotation brackets, “<span class="math inline">\({[\hspace{-.02in}[]\hspace{-.02in}]}\)</span>”, to designate the semantic value of a sentence or a CCP. An interpretation <span class="math inline">\(I\)</span> sets the semantic values for both the atomic sentences and the atomic CCPs, while the semantic values of complex formulas is given by recursive semantic rules. For every atomic sentence <span class="math inline">\(\alpha\)</span>, <span class="math inline">\({[\hspace{-.02in}[\alpha]\hspace{-.02in}]}_I\)</span> is a set of possible worlds (i.e. a subset of <span class="math inline">\(W\)</span>). For every atomic CCP <span class="math inline">\(\alpha\)</span>, <span class="math inline">\({[\hspace{-.02in}[\alpha]\hspace{-.02in}]}_I\)</span> is a function from sets of possible worlds to sets of possible worlds (i.e. from <span class="math inline">\(\mathcal{P}(W)\)</span> to <span class="math inline">\(\mathcal{P}(W)\)</span>).<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></p>
+<p>The semantic value of all complex sentences, as we will see, are sets of possible worlds. A sentence <span class="math inline">\(\alpha\)</span> entails <span class="math inline">\(\beta\)</span> (which we write <span class="math inline">\(\alpha \models \beta\)</span>) iff on every interpretation, <span class="math inline">\(I\)</span>, <span class="math inline">\({[\hspace{-.02in}[\alpha]\hspace{-.02in}]}_I \subseteq {[\hspace{-.02in}[\beta]\hspace{-.02in}]}_I\)</span>. The semantic value of all complex CCPs, which we will define later, are partial functions from <span class="math inline">\(\mathcal{P}(W)\)</span> to <span class="math inline">\(\mathcal{P}(W)\)</span>; we will not need entailment relations for these.</p>
+<p>Let us first discuss the semantic value of sentences of the form <span class="math inline">\(\alpha [\psi]\)</span> where <span class="math inline">\(\alpha\)</span> is a sentence and <span class="math inline">\(\psi\)</span> is an <em>atomic</em> CCP. Our semantic rule for CCP application is functional application:</p>
+<p>(@) <span class="math inline">\({[\hspace{-.02in}[\alpha [\psi]]\hspace{-.02in}]}_I\)</span> = <span class="math inline">\({[\hspace{-.02in}[\psi]\hspace{-.02in}]}_I({[\hspace{-.02in}[\alpha]\hspace{-.02in}]}_I)\)</span></p>
+<p>We assume (naturally) that, <span class="math inline">\({[\hspace{-.02in}[\alpha [\psi]]\hspace{-.02in}]}_I\)</span> is defined iff both <span class="math inline">\({[\hspace{-.02in}[\psi]\hspace{-.02in}]}_I\)</span> and <span class="math inline">\({[\hspace{-.02in}[\alpha]\hspace{-.02in}]}_I\)</span> are defined and the latter is in the range of the former. (Since presuppositions arise because of undefinedness, such assumptions matter.)</p>
+<p>We will also give recursive semantic rules for the connectives when they apply to sentences.<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> These are as expected:</p>
+<ol start="8" class="example" type="1">
+<li><span class="math inline">\({[\hspace{-.02in}[\alpha \land \beta]\hspace{-.02in}]}_I\)</span> is <span class="math inline">\(\{ w: w \in {[\hspace{-.02in}[\alpha]\hspace{-.02in}]}\)</span> and <span class="math inline">\(w \in {[\hspace{-.02in}[\beta]\hspace{-.02in}]} \}\)</span> (@)<span class="math inline">\({[\hspace{-.02in}[\alpha \lor \beta]\hspace{-.02in}]}_I\)</span> is <span class="math inline">\(\{ w: w \in {[\hspace{-.02in}[\alpha]\hspace{-.02in}]}\)</span> or <span class="math inline">\(w \in {[\hspace{-.02in}[\beta]\hspace{-.02in}]} \}\)</span></li>
+<li><span class="math inline">\({[\hspace{-.02in}[\alpha \backslash \beta]\hspace{-.02in}]}_I\)</span> is <span class="math inline">\(\{ w: w \in {[\hspace{-.02in}[\alpha]\hspace{-.02in}]}\)</span> and <span class="math inline">\(w \not \in {[\hspace{-.02in}[\beta]\hspace{-.02in}]} \}\)</span></li>
+</ol>
+<p>We assume here that for an arbitrary binary connective <span class="math inline">\(*\)</span>, <span class="math inline">\({[\hspace{-.02in}[\alpha * \beta]\hspace{-.02in}]}\)</span> is defined iff both <span class="math inline">\({[\hspace{-.02in}[\alpha]\hspace{-.02in}]}\)</span> and <span class="math inline">\({[\hspace{-.02in}[\beta]\hspace{-.02in}]}\)</span> are defined. (This is the standard, week-Kleene treatment of combinations of partially defined formula, something that is only implicit in Heim’s original papers.)</p>
+<p>This semantics does not cover the entire language since we have only given a semantics for sentences formed <em>without</em> the use of the recursive syntax for CCPs: we have no way of handling any formula that includes a complex CCP such as <span class="math inline">\(a[A \land B]\)</span> or <span class="math inline">\(a[\lnot A]\)</span>. Complex CCPs is where the action is: I turn now to Heim’s treatment.</p>
+<h6 id="complexs">Semantics of complex CCPs</h6>
+<p>On my formulation of Heim’s semantics for complex CCPs, which is very close to her original treatment, their meaning is defined recursively in terms of the semantics of the language already given.</p>
+<ol start="10" class="example" type="1">
+<li>If <span class="math inline">\(\alpha\)</span> is a sentence and <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\psi\)</span> are CCPs then:<br />
+</li>
+</ol>
+<ul>
+<li><p><span> <span class="math inline">\(\alpha[\lnot \phi] = \alpha \backslash \alpha[\phi]\)</span></span></p></li>
+<li><p><span> <span class="math inline">\(\alpha[\phi \land \psi]= (\alpha[\phi])[\psi]\)</span>[hconj] </span></p></li>
+<li><p><span> <span class="math inline">\((\alpha[\phi \lor \psi] = \alpha[\phi] \lor (\alpha[\lnot \phi])[\psi]\)</span></span></p></li>
+<li><p><span> <span class="math inline">\((\alpha[\phi \supset \psi] = \alpha[\lnot \phi] \lor (\alpha[\phi])[\psi]\)</span></span></p></li>
+</ul>
+<p>Note: the equal sign is used to designate equality of semantic value, not syntactic equality, semantic evaluation brackets here and later are suppressed for readability.</p>
+<h5 id="assessment">Assessment</h5>
+<p>These rules complete the semantics for the language as repeated applications of them will yield an interpretation of any formula. Two main properties recommend this semantics for complex CCPs:</p>
+<ol type="1">
+<li><p>It gets the truth conditions of complex sentences correct. [point1]</p></li>
+<li><p>The rules of presupposition projection fall out of it. [point2]</p></li>
+</ol>
+<p>To see the way in which the proposal gets the truth-conditions right requires looking at an example of a complex CCP. Consider the CCPs we should assign to <em>It stopped raining</em>, <span class="math inline">\(R\)</span>, and <em>John is tall</em>, <span class="math inline">\(J\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\({[\hspace{-.02in}[R]\hspace{-.02in}]}\)</span> = function <span class="math inline">\(f\)</span> s.t. <span class="math inline">\(f(p)\)</span> is defined if and only if <span class="math inline">\(p\)</span> is a set of possible worlds in all of which it used to rain, and when defined it returns <span class="math inline">\(\{ w \in p:\)</span> it doesn’t rain now in <span class="math inline">\(w\}\)</span></p></li>
+<li><p><span class="math inline">\({[\hspace{-.02in}[J]\hspace{-.02in}]}\)</span> = function <span class="math inline">\(g\)</span> that takes any set of possible worlds <span class="math inline">\(p\)</span> and returns <span class="math inline">\(\{ w \in p:\)</span> John is tall in <span class="math inline">\(w\}\)</span></p></li>
+</ul>
+<p>Now we can ask what happens when we update a context <span class="math inline">\(c\)</span> with the complex CCP <span class="math inline">\(R \land J\)</span>. Applying ([hconj]) we get:  <span class="math inline">\(c[R \land J] =(c[R])[J] = g(f(c))\)</span>. When defined <span class="math inline">\(g(f(c))\)</span> = <span class="math inline">\(\{ w \in c:\)</span> it doesn’t rain now in <span class="math inline">\(w\)</span> and John is tall in <span class="math inline">\(w\}\)</span>. When defined, this is exactly the context you would get when you update it with the propositions that it stopped raining and that John is tall. So the rule for conjunction allows complex CCPs to mimic the effect on the common ground of adding complex sentences in a classical semantics. Similar remarks apply to the other definitions above (as long as we understand the conditional as the material conditional).</p>
+<p>With regard to point (2) above, the question is what the definedness conditions of complex CCPs are in terms of the definedness conditions of their parts. Each of Heim’s semantic rules in ([hs]) uniquely determines a definedness condition. Using her rule for conjunction, <span class="math inline">\(\alpha[\phi \land \psi]\)</span> = <span class="math inline">\((\alpha[\phi])[\psi]\)</span>, we can see that <span class="math inline">\(c[R \land J]\)</span> is defined iff <span class="math inline">\((c[R])[J]\)</span> is defined which it is iff <span class="math inline">\(g(f(c))\)</span> is defined. Given that <span class="math inline">\(f\)</span> is a partial function and <span class="math inline">\(g\)</span> is a total function, the only way this can fail to be defined is if <span class="math inline">\(f(c)\)</span> is not defined. By definition <span class="math inline">\(f(c)\)</span> is defined iff <span class="math inline">\(c\)</span> only includes worlds where it used to rain. This matches the predictions of standard accounts: for the sentence to not have a presupposition failure <span class="math inline">\(c\)</span> must include the information that it is raining. If we switch the order of <span class="math inline">\(R\)</span> and <span class="math inline">\(J\)</span> we get the standard Karttunen prediction that <span class="math inline">\(c[J \land R]\)</span> is defined if and only if in every world in <span class="math inline">\(c\)</span> in which John is tall it used to rain.</p>
+<p>If we work through the predictions for all the connectives we get standard predictions, ones that capture the generalizations in §[psrules]. I will call the generalizations about presupposition projection that follow from Heim’s definedness conditions the <em>Karttunen/Heim projection rules</em>.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
+<h5 id="bibliography" class="unnumbered">Bibliography</h5>
+<div id="refs" class="references">
+<div id="ref-BeaverPresupposition">
+<p>Beaver, David. 2001. <em>Presupposition and Assertion in Dynamic Semantics</em>. CSLI. <a href="https://webspace.utexas.edu/dib97/silli.pdf" class="uri">https://webspace.utexas.edu/dib97/silli.pdf</a>.</p>
+</div>
+<div id="ref-BeaverGeurtsSEP">
+<p>Beaver, David, and Bart Geurts. 2011. “Presupposition.” In <em>The Stanford Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, Summer 2011. <a href="http://plato.stanford.edu/entries/presupposition/" class="uri">http://plato.stanford.edu/entries/presupposition/</a>.</p>
+</div>
+<div id="ref-GeurtsProviso">
+<p>Geurts, Bart. 1996. “Local Satisfaction Guarenteed: A Presupposition Theory and Its Problems.” <em>Linguistics and Philosophy</em> 19: 259–94. doi:<a href="https://doi.org/10.1007/BF00628201">10.1007/BF00628201</a>.</p>
+</div>
+<div id="ref-HeimPresupposition">
+<p>Heim, Irene. 1983. “On the Projection Problem for Presuppositions.” <em>West Coast Conference on Formal Linguistics</em> 2: 114–25.</p>
+</div>
+<div id="ref-HeimPresupposition2">
+<p>———. 1990. “Presupposition Projection.” In <em>Reader for the Nijmegen Workshop on Presupposition, Lexical Meaning, and Discourse Processes</em>, edited by R. van der Sandt. University of Nijmegen. <a href="http://semanticsarchive.net/Archive/GFiMGNjN/" class="uri">http://semanticsarchive.net/Archive/GFiMGNjN/</a>.</p>
+</div>
+<div id="ref-KarttunenPresuppositions">
+<p>Karttunen, Lauri. 1973. “Presuppositions of Compound Sentences.” <em>Linguistic Inquiry</em> 4 (2): 169–93. <a href="http://www.jstor.org/stable/4177763" class="uri">http://www.jstor.org/stable/4177763</a>.</p>
+</div>
+<div id="ref-KarttunenPresupposition">
+<p>———. 1974. “Presupposition and Linguistic Context.” <em>Theoretical Linguistics</em> 1 (1-3): 181–93. doi:<a href="https://doi.org/10.1515/thli.1974.1.1-3.181">10.1515/thli.1974.1.1-3.181</a>.</p>
+</div>
+<div id="ref-RothschildExplaining">
+<p>Rothschild, Daniel. 2015. “Explaining Presupposition Projection with Dynamic Semantics.” <em>Semantics and Pragmatics</em> 4 (3): 1–43.</p>
+</div>
+<div id="ref-SchlenkerArticulate">
+<p>Schlenker, Philippe. 2008. “Be Articulate: A Pragmatic Theory of Presupposition Projection.” <em>Theoretical Linguistics</em> 34 (3): 157–212. doi:<a href="https://doi.org/10.1515/THLI.2008.013">10.1515/THLI.2008.013</a>.</p>
+</div>
+<div id="ref-SoamesPresupposition">
+<p>Soames, Scott. 1982. “How Presuppositions Are Inherited: A Solution to the Projection Problem.” <em>Linguistic Inquiry</em> 13 (3): 483–545. <a href="http://www.jstor.org/stable/4178288" class="uri">http://www.jstor.org/stable/4178288</a>.</p>
+</div>
+<div id="ref-SoamesPresupposition2">
+<p>———. 1989. “Presuppositions.” In <em>Handbook of Philosophical Logic</em>, edited by D. Gabbay and F. Guenther, IV:553–616. Dordrecht.</p>
+</div>
+<div id="ref-StalnakerPresupposition">
+<p>Stalnaker, Robert. 1973. “Presuppositions.” <em>Journal of Philosophical Logic</em> 2 (4): 447–57. doi:<a href="https://doi.org/10.1007/BF00262951">10.1007/BF00262951</a>.</p>
+</div>
+<div id="ref-StalnakerPragmaticPresuppositions">
+<p>———. 1974. “Pragmatic Presuppositions.” In <em>Semantics and Philosophy</em>, edited by Milton K. Munitz and Peter K. Unger. NYU.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I am assuming a basic familiarity with the notion of presupposition as currently used within the semantics community. See e.g. <span class="citation" data-cites="SoamesPresupposition2">Soames (1989)</span>, <span class="citation" data-cites="BeaverPresupposition">Beaver (2001)</span>, and <span class="citation" data-cites="BeaverGeurtsSEP">Beaver and Geurts (2011)</span>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>There is a long tradition that argues against these conditional presuppositions <span class="citation" data-cites="GeurtsProviso">(most notably Geurts 1996)</span>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>There are many changes from Heim’s original paper <span class="citation" data-cites="HeimPresupposition">(1983)</span>. Most significantly: the notation is more in line with contemporary usage, presuppositions are modeled explicitly as partially defined functions, and letters representing contexts are brought into the object language.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Notation: <span class="math inline">\(W\)</span> denotes the set of all possible worlds, and for any set <span class="math inline">\(X\)</span>, <span class="math inline">\(\mathcal{P}(X)\)</span> denotes the set of all subsets of <span class="math inline">\(X\)</span>, i.e. the powerset of <span class="math inline">\(X\)</span>.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>See <span class="citation" data-cites="SoamesPresupposition2">Soames (1989)</span> for an interesting criticism of this pragmatic rule. Soames’s most important point is that if we use trivalence to capture vagueness as well as presupposition failure, this rule predicts that a vague sentence has non-trivial presuppositions. Soames argues convincingly that this is a bad prediction.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Throughout, I assume and suppress when unnecessary standard parenthetical notation to mark order of operations.<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Hence <span class="math inline">\(I\)</span> can be specified by a triplet, <span class="math inline">\(\langle W, S, C \rangle\)</span>, where <span class="math inline">\(W\)</span> is a set of possible worlds, <span class="math inline">\(S\)</span> is a function from atomic sentences to subsets of <span class="math inline">\(W\)</span>, and <span class="math inline">\(C\)</span> is a function from atomic CCPs to partial functions from <span class="math inline">\(\mathcal{P}(W)\)</span> to <span class="math inline">\(\mathcal{P}(W)\)</span>. I will often suppress mention of <span class="math inline">\(I\)</span>.<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>Despite using the same symbols for connectives joining sentences and connectives joining CCPs, these are different connectives with different semantics.<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>This label is not very accurate for disjunction: Karttunen, in fact, made different predictions, while <span class="citation" data-cites="HeimPresupposition">Heim (1983)</span> does not discuss the case of disjunctions. I discuss disjunction further in §[disdisc].<a href="#fnref9">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>
