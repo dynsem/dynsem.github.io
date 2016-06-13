@@ -1,13 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="http://dynsem.github.io/my.css" type="text/css" />
+  <link rel="stylesheet" href="http://dynsem.github.io/my.css">
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div id="nav">
@@ -33,14 +36,14 @@
 
 
 <h5 id="propositional-common-grounds">Propositional common grounds</h5>
-<p>What formal object should we use to represent contexts in semantics (whether dynamic or not). In the propositional case, following <span class="citation">Stalnaker (1974; 1978)</span>, we can treat the context as a set of propositions in the <em>common ground</em>, i.e. those that are mutually accepted for the purposes of conversation. When modelling contexts, however, we do not always keep track individually of every proposition commonly accepted. Rather we often use the <em>context set</em>, instead. The context set is just the set of all worlds that are compatible with every proposition in the common ground. If propositions themselves are identified with sets of worlds (the worlds they are true at) then the context set is just the intersection of all the worlds in the common ground.</p>
+<p>What formal object should we use to represent contexts in semantics (whether dynamic or not). In the propositional case, following <span class="citation" data-cites="StalnakerPresuppositions StalnakerAssertion">Stalnaker (1974; 1978)</span>, we can treat the context as a set of propositions in the <em>common ground</em>, i.e. those that are mutually accepted for the purposes of conversation. When modelling contexts, however, we do not always keep track individually of every proposition commonly accepted. Rather we often use the <em>context set</em>, instead. The context set is just the set of all worlds that are compatible with every proposition in the common ground. If propositions themselves are identified with sets of worlds (the worlds they are true at) then the context set is just the intersection of all the worlds in the common ground.</p>
 <h5 id="propositional-updates">Propositional updates</h5>
 <p>Given this, propositional, worldly, notion of context we can easily define the update assocated with an assertion as follows (again following Stalnaker). If in a context <span class="math inline">\(c\)</span> a sentence <span class="math inline">\(s\)</span> is asserted and <span class="math inline">\(s\)</span> expresses the proposition <span class="math inline">\(p\)</span>, then the new common ground after <span class="math inline">\(s\)</span> has been accepted is just the old common ground <span class="math inline">\(c\)</span> intersected with <span class="math inline">\(p\)</span>, <span class="math inline">\(c\cap p\)</span>. This is a <em>static</em> notion of conversational dynamics. That is we assume a <em>static semantics</em> in which sentences are assocated with propositions.</p>
 <blockquote>
-<p>Once the context is adjusted to accommodate the information that the particular utterance has produced, how does the CONTENT of an assertion alter the context? My suggestion is a very simple one: To make an assertion is to reduce the context set in a particular way, provided that there are no objections from the other participants in the conversation. The particular way in which the context set is reduced is that all of the possible situations incompatible with what is said are eliminated. To put it a slightly different way, the essential effect of an assertion is to change the presuppositions of the participants in the conversation by adding the content of what is asserted to what is presupposed. This effect is avoided only if the assertion is rejected. <span class="citation">(Stalnaker 1978, 323)</span></p>
+<p>Once the context is adjusted to accommodate the information that the particular utterance has produced, how does the CONTENT of an assertion alter the context? My suggestion is a very simple one: To make an assertion is to reduce the context set in a particular way, provided that there are no objections from the other participants in the conversation. The particular way in which the context set is reduced is that all of the possible situations incompatible with what is said are eliminated. To put it a slightly different way, the essential effect of an assertion is to change the presuppositions of the participants in the conversation by adding the content of what is asserted to what is presupposed. This effect is avoided only if the assertion is rejected. <span class="citation" data-cites="StalnakerAssertion">(Stalnaker 1978, 323)</span></p>
 </blockquote>
 <h5 id="contexts-with-file-structure">Contexts with file structure</h5>
-<p><span class="citation">Heim (1982)</span> enriches Stalnaker’s notion of content with information about what she calls, following <span class="citation">Karttunen (1976)</span>, <em>discourse referents</em>. The file metaphor suggest a system in which we keep dossiers of information about a series of unspecified individuals. Heim differentiates dossiers by number, but we will rather assume that each dossier is associated with an individual. A sample dossier, then, might be something like this:</p>
+<p><span class="citation" data-cites="HeimDiss">Heim (1982)</span> enriches Stalnaker’s notion of content with information about what she calls, following <span class="citation" data-cites="KarttunenDiscourse">Karttunen (1976)</span>, <em>discourse referents</em>. The file metaphor suggest a system in which we keep dossiers of information about a series of unspecified individuals. Heim differentiates dossiers by number, but we will rather assume that each dossier is associated with an individual. A sample dossier, then, might be something like this:</p>
 <blockquote>
 <p>Individuals <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>: <span class="math inline">\(x\)</span> is a man, <span class="math inline">\(y\)</span> is a dog, <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>.</p>
 </blockquote>
@@ -79,7 +82,28 @@
 <blockquote>
 <p><span class="math inline">\(S = \{\langle f,w \rangle :\)</span> the domain of <span class="math inline">\(f\)</span> is <span class="math inline">\(\{ x,y\},\)</span> <span class="math inline">\(f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
 </blockquote>
-<h5 id="bibliography" class="unnumbered">Bibliography</h5>
+<h5 id="bibliography">Bibliography</h5>
+<!-- Start of StatCounter Code for BBEdit (Mac) -->
+<script type="text/javascript">
+var sc_project=11007553; 
+var sc_invisible=1; 
+var sc_security="23a05678"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript>
+<div class="statcounter">
+<a title="create counter"
+href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11007553/0/23a05678/1/" alt="create
+counter"></a>
+</div>
+</noscript>
+<!-- End of StatCounter Code for BBEdit (Mac) -->
 <div id="refs" class="references">
 <div id="ref-HeimDiss">
 <p>Heim, Irene. 1982. “The Semantics of Definite and Indefinite Noun Phrases.” PhD thesis, Amherst: University of Massachusetts. <a href="http://semanticsarchive.net/Archive/Tk0ZmYyY/" class="uri">http://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.</p>
@@ -94,11 +118,11 @@
 <p>———. 1978. “Assertion.” In <em>Syntax and Semantics</em>, edited by P. Cole. Academic Press.</p>
 </div>
 </div>
-<div class="footnotes">
+<section class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>We assume a constant domain across worlds.<a href="#fnref1">↩</a></p></li>
 </ol>
-</div>
+</section>
 </body>
 </html>
