@@ -44,44 +44,29 @@
 </blockquote>
 <h5 id="contexts-with-file-structure">Contexts with file structure</h5>
 <p><span class="citation" data-cites="HeimDiss">Heim (1982)</span> enriches Stalnaker’s notion of content with information about what she calls, following <span class="citation" data-cites="KarttunenDiscourse">Karttunen (1976)</span>, <em>discourse referents</em>. The file metaphor suggest a system in which we keep dossiers of information about a series of unspecified individuals. Heim differentiates dossiers by number, but we will rather assume that each dossier is associated with an individual. A sample dossier, then, might be something like this:</p>
-<blockquote>
 <p>Individuals <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>: <span class="math inline">\(x\)</span> is a man, <span class="math inline">\(y\)</span> is a dog, <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>.</p>
-</blockquote>
 <p>What sort of formal object should we use to keep track of such information? This is actually a somewhat complex question to ask as it is not clear what kind of information is in here. If we just want to keep track of the information that some individuals <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are such that <span class="math inline">\(x\)</span> is a man <span class="math inline">\(y\)</span> is dog, and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>, then we might just take the sets of worlds where that is so:</p>
-<blockquote>
 <p><span class="math inline">\(P = \{ w: \exists x \exists y:\)</span> <span class="math inline">\(x\)</span> is a man, <span class="math inline">\(y\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
-</blockquote>
 <p>This representation, however, loses the structure of the file system it represents. Heim’s notion is more fine-grained than this, as she wants to keep information about individual discourse referents. Her way of doing this is to equate contexts with what she calls <em>satisfaction sets</em>. A satisfaction set is set of ordered pairs the first member of which is an assignment function (a function from the set of variables <span class="math inline">\(V\)</span> to the domain <span class="math inline">\(D\)</span>) and the second member of which is a world <span class="math inline">\(W\)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> The satisfaction set corresponding to the file described above is as follows:</p>
-<blockquote>
 <p><span class="math inline">\(S = \{ \langle f,w \rangle : f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
-</blockquote>
 <p>Satisfaction sets encode both informationa about worlds and discourse referents at once. For we can extract a propositional context set <span class="math inline">\(P\)</span> from a satisfaction set <span class="math inline">\(S\)</span>, by simply applying the following function <span class="math inline">\(E\)</span> to <span class="math inline">\(S\)</span>:</p>
-<blockquote>
 <p><span class="math inline">\(E(S) = \{w : \exists f : \langle f,w \rangle \in S\}\)</span></p>
-</blockquote>
 <p>It should be clear that <span class="math inline">\(E\)</span> maps many different satisfaction sets to the same propositional context set. Here are two examples of files that map to <span class="math inline">\(P\)</span>.</p>
-<blockquote>
 <p><span class="math inline">\(S_1 = \{ \langle f,w \rangle : f(y)\)</span> is a man, <span class="math inline">\(f(x)\)</span> is a dog and <span class="math inline">\(y\)</span> owns <span class="math inline">\(x\)</span> in <span class="math inline">\(w \}\)</span><br />
 <span class="math inline">\(S_2 = \{ \langle f,w \rangle : f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span>, <span class="math inline">\(f(z)\)</span> is a man in <span class="math inline">\(w \}\)</span></p>
-</blockquote>
 <p>Satisfaction sets, as fine-grained as they are, do not themselves carry sufficient information for some purposes. Consider, first, the most uninformative satifaction set, <span class="math inline">\(T\)</span>, that simply includes all worlds and assignment functions:</p>
-<blockquote>
 <p><span class="math inline">\(T = \{ \langle f,w \rangle : f\)</span> is an assignment function and <span class="math inline">\(w\)</span> is a world<span class="math inline">\(\}\)</span></p>
-</blockquote>
 <p><span class="math inline">\(T\)</span> is also equivalent to this file:</p>
-<blockquote>
 <p><span class="math inline">\(\{ \langle f,w \rangle : f(x) = f(x) \}\)</span></p>
-</blockquote>
 <p>But we might want to be able to talk of a file in which a discourse referent <span class="math inline">\(x\)</span> is introduced even if the file contains no non-trivial information about <span class="math inline">\(x\)</span>. To do this Heim proposes to identify files with pairs of satisfaction sets and <em>domains</em> where domians are simply the set of variables that are active in the file.</p>
 <p>A more perspicuous representation of files is as sets of pairs of <em>partial</em> assignment functions and worlds. A file is a set <span class="math inline">\(F\)</span> such that each element of <span class="math inline">\(F\)</span> is an ordered pair <span class="math inline">\(\langle f, w \rangle\)</span> where and for any two elements <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> the assignment functions associated with <span class="math inline">\(f\)</span> and <span class="math inline">\(y\)</span> have the same domain (i.e. they are defined for the same variables, so have the same degree of partiality).</p>
 <p>Now we treat the uniformative file, <span class="math inline">\(\top\)</span>, as follows, where <span class="math inline">\(\emptyset\)</span> is understood to be the assignment function that is completely undefined.</p>
-<blockquote>
 <p><span class="math inline">\(\top = \{ \langle \emptyset, w \rangle : w\)</span> is a world <span class="math inline">\(\}\)</span></p>
-</blockquote>
 <p>On the other hand the file corresponding to our example would be as follows:</p>
-<blockquote>
 <p><span class="math inline">\(S = \{\langle f,w \rangle :\)</span> the domain of <span class="math inline">\(f\)</span> is <span class="math inline">\(\{ x,y\},\)</span> <span class="math inline">\(f(x)\)</span> is a man, <span class="math inline">\(f(y)\)</span> is a dog and <span class="math inline">\(x\)</span> owns <span class="math inline">\(y\)</span> in <span class="math inline">\(w \}\)</span></p>
-</blockquote>
+<h5 id="freeness-and-translating-between-heims-files-and-the-system-here">Freeness and translating between Heim’s files and the system here</h5>
+<p>For Heim a file is a set of pairs of total assignment functions and worlds (a satisfaction set), along with a set of variables, the domain. The file must also meet the constraint that every variable in the domain is <em>free</em> in the satisfaction set. A variable <span class="math inline">\(x\)</span> is <em>free</em> in the satisfactions set <span class="math inline">\(S\)</span> iff for all objects <span class="math inline">\(o\)</span> in the domain for each <span class="math inline">\(\langle f,w \rangle\)</span> in <span class="math inline">\(S\)</span>, <span class="math inline">\(\langle f_{x\to o}\)</span> is in <span class="math inline">\(S\)</span>.</p>
+<p>The 1-1 mapping from Heim’s files to ours is as follows: for any Heimian file with satisfaction set <span class="math inline">\(S\)</span> and domain <span class="math inline">\(V\)</span>, the file corresponding to it is just the <span class="math inline">\(\{ \langle f,w \langle :\)</span> there exists <span class="math inline">\(\langle f&#39;,w \rangle \in S\)</span> <span class="math inline">\(f\)</span> is undefined for each variable not in <span class="math inline">\(D\)</span>, and for all <span class="math inline">\(x\)</span> in <span class="math inline">\(D\)</span>, <span class="math inline">\(f(x) = f&#39;(x)\}\)</span></p>
 <h5 id="bibliography">Bibliography</h5>
 <!-- Start of StatCounter Code for BBEdit (Mac) -->
 <script type="text/javascript">
