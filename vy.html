@@ -38,7 +38,7 @@
 
 <p>This appendix explores the relationship between <span class="citation" data-cites="YalcinEpistemic">Yalcin (2007)</span> andl Veltman’s <span class="citation" data-cites="VeltmanDefaults">(1996)</span> semantics for epistemic modals. A modification of Yalcin’s semantics from <span class="citation" data-cites="KlinedinstRothschildConnectives">Klinedinst and Rothschild (2012)</span> is used as well as the standard modification of Veltman’s semantics discussed.</p>
 <h5 id="basic-assumptions" class="unnumbered">Basic assumptions</h5>
-<p>We assume again a language <span class="math inline">\(\mathcal{L}\)</span> syntax of propositional logic with modal operators for both semantics and a standard set of worlds. We write <span class="math inline">\({[\hspace{-.02in}[{a}]\hspace{-.02in}]}\)</span> for the worlds in which the atomic formula <span class="math inline">\(a\)</span> is true (what we wrote as <span class="math inline">\(I(a)\)</span> earlier). For the dynamic system we give a semantics that assigns to sentence an update on an arbitrary sentence <span class="math inline">\(c\)</span> (the update of <span class="math inline">\(\phi\)</span> on <span class="math inline">\(c\)</span> is written <span class="math inline">\(c[\phi]\)</span>. For the static semantics we define a denotation function <span class="math inline">\({[\hspace{-.02in}[{\cdot}]\hspace{-.02in}]}\)</span> that gives relative to a world <span class="math inline">\(w\)</span> and a context <span class="math inline">\(s\)</span> (again a set of worlds) a truth-value (i.e. <span class="math inline">\({[\hspace{-.02in}[{\cdot}]\hspace{-.02in}]}: \mathcal L \times W \times \mathcal P (W) \to \{0,1\}\)</span>). We then prove that both systems induce the same ‘updates’.</p>
+<p>We assume again a language <span class="math inline">\(\mathcal{L}\)</span> syntax of propositional logic with modal operators for both semantics and a standard set of worlds. We write <span class="math inline">\({[\hspace{-.02in}[{a}]\hspace{-.02in}]}\)</span> for the worlds in which the atomic formula <span class="math inline">\(a\)</span> is true (what we wrote as <span class="math inline">\(I(a)\)</span> earlier). For the dynamic system we give a semantics that assigns to sentence an update on an arbitrary context <span class="math inline">\(c\)</span> (the update of <span class="math inline">\(\phi\)</span> on <span class="math inline">\(c\)</span> is written <span class="math inline">\(c[\phi]\)</span>. For the static semantics we define a denotation function <span class="math inline">\({[\hspace{-.02in}[{\cdot}]\hspace{-.02in}]}\)</span> that gives relative to a world <span class="math inline">\(w\)</span> and a context <span class="math inline">\(s\)</span> (again a set of worlds) a truth-value (i.e. <span class="math inline">\({[\hspace{-.02in}[{\cdot}]\hspace{-.02in}]}: \mathcal L \times W \times \mathcal P (W) \to \{0,1\}\)</span>). We then prove that both systems induce the same ‘updates’.</p>
 <h5 id="veltmans-semantics" class="unnumbered">Modified Veltman semantics</h5>
 <p><span class="math inline">\(c[a] = c \cap {[\hspace{-.02in}[{a}]\hspace{-.02in}]}\)</span></p>
 <p><span class="math inline">\(c[\lnot \phi] = c \backslash c[\phi]\)</span></p>
@@ -51,7 +51,7 @@
 <p><span class="math inline">\({[\hspace{-.02in}[{\lnot \phi }]\hspace{-.02in}]}^{w,s}\)</span> is true iff <span class="math inline">\({[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,s}\)</span> is false.</p>
 <p><span class="math inline">\({[\hspace{-.02in}[{\phi \land \psi}]\hspace{-.02in}]}^{w,s}\)</span> is true iff <span class="math inline">\({[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,s}\)</span> is true and <span class="math inline">\({[\hspace{-.02in}[{\psi}]\hspace{-.02in}]}^{w,s{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}}\)</span> is true.</p>
 <p><span class="math inline">\({[\hspace{-.02in}[{\phi \lor \psi}]\hspace{-.02in}]}\)</span> is true iff <span class="math inline">\({[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,s}\)</span> is true or <span class="math inline">\({[\hspace{-.02in}[{\psi}]\hspace{-.02in}]}^{w,s{[\hspace{-.02in}[{\lnot \phi}]\hspace{-.02in}]}}\)</span> is true.</p>
-<p><span class="math inline">\({[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w,s}\)</span> is true iff <span class="math inline">\(\forall w&#39; \in s\)</span> <span class="math inline">\({[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w&#39;,s}\)</span> is true.</p>
+<p><span class="math inline">\({[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w,s}\)</span> is true iff <span class="math inline">\(\forall w&#39; \in s\)</span> <span class="math inline">\({[\hspace{-.02in}[{ \phi}]\hspace{-.02in}]}^{w&#39;,s}\)</span> is true.</p>
 <p><span class="math inline">\({[\hspace{-.02in}[{\Diamond \phi}]\hspace{-.02in}]}^{w,s}\)</span> is true iff <span class="math inline">\({[\hspace{-.02in}[{\Box \lnot \phi}]\hspace{-.02in}]}\)</span> is false.</p>
 <p>where <span class="math inline">\(c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}\)</span>, the update of <span class="math inline">\(c\)</span> by <span class="math inline">\(\phi\)</span>, is defined as follows:</p>
 <p><span class="math inline">\(c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]} = \{w \in c: {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c} \textrm{ is true}\}\)</span></p>
@@ -80,10 +80,10 @@
 <span class="math inline">\(w \in c[\phi \lor\psi] \\ \textrm{iff } w \in c[\phi]\textrm{ or }w \in (c[\lnot \phi])[\psi] \\ \textrm{iff } {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true or } {[\hspace{-.02in}[{\psi}]\hspace{-.02in}]}^{w,c{[\hspace{-.02in}[{\lnot \phi}]\hspace{-.02in}]}}\textrm{ is true} \\ \textrm{iff } w \in c{[\hspace{-.02in}[{\phi \lor \psi}]\hspace{-.02in}]}\)</span></p>
 </dd>
 <dt>Necessity Modal</dt>
-<dd><p><span class="math inline">\(w \in c[\Box \phi]\\ \textrm{iff } c[\phi] = c \\ \textrm{iff } \forall w \in c, w \in c[\phi] \\ \textrm{iff } \forall w \in c, w \in c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]} \\ \textrm{iff } \forall w \in c, {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } w \in c {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}\)</span></p>
+<dd><p><span class="math inline">\(w \in c[\Box \phi]\\ \textrm{iff } w \in c\textrm{ and }c[\phi] = c \\ \textrm{iff } \forall w \in c, w \in c[\phi] \\ \textrm{iff } \forall w \in c, w \in c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]} \\ \textrm{iff } \forall w \in c, {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } w \in c {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}\)</span></p>
 </dd>
 <dt>Possibility Modal</dt>
-<dd><p>Follows from previous proofs since defined in terms of necessity modal and negation.</p>
+<dd><p>Follows from previous proofs since defined in terms of necessity modal and negation.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 </dd>
 </dl>
 </dd>
@@ -120,5 +120,11 @@ counter"></a>
 <p>Yalcin, Seth. 2007. “Epistemic Modals.” <em>Mind</em> 116: 983–1026. doi:<a href="https://doi.org/10.1093/mind/fzm983">10.1093/mind/fzm983</a>.</p>
 </div>
 </div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Thanks to Matt Mandelkern for a few corrections on this proof.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
 </body>
 </html>
