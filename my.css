@@ -1,3 +1,5 @@
+
+
 @media print {
   *,
   *:before,
@@ -60,7 +62,7 @@
 
 pre,
 code {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family:  Menlo, Monaco, "Courier New", monospace;
 }
 
 pre {
@@ -71,7 +73,7 @@ pre {
 
 a,
 a:visited {
-  color: #3498db;
+  color: #2980b9;
 }
 
 a:hover,
@@ -171,9 +173,12 @@ textarea {
   max-width: 100%;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
 
-@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
 
 html {
   font-size: 18px;
@@ -184,8 +189,9 @@ html {
 
 body {
   color: #444;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 300;
+  /*font-family: 'Open Sans Condensed', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   margin: 0 auto;
   /*max-width: 48rem;*/
   line-height: 1.45;
@@ -224,6 +230,7 @@ li.navigation {
 
 li a.navigation, .dropbtn {
     font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
     display: inline-block;
     color: white;
     text-align: center;
@@ -271,7 +278,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arimo, Helvetica, sans-serif;
+  font-family: Montserrat, Helvetica, sans-serif;
 }
 
 
