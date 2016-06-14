@@ -58,7 +58,7 @@
 <h5 id="equivalence" class="unnumbered">Equivalence</h5>
 <p>The following limited equivalence statement may be made between the two semantics:</p>
 <blockquote>
-<p><strong>For any sentence <span class="math inline">\(\phi\)</span> any context <span class="math inline">\(c\)</span>, and any world <span class="math inline">\(w\)</span>, <span class="math inline">\(w \in c[\phi]\)</span> iff <span class="math inline">\(w \in c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}\)</span>.</strong></p>
+<p><strong>For any sentence <span class="math inline">\(\phi\)</span> any context <span class="math inline">\(c\)</span>, and any world <span class="math inline">\(w\)</span> in <span class="math inline">\(c\)</span>, <span class="math inline">\(w \in c[\phi]\)</span> iff <span class="math inline">\(w \in c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}\)</span>.</strong></p>
 </blockquote>
 <p>Proof is by induction on formula complexity.</p>
 <dl>
@@ -80,7 +80,7 @@
 <span class="math inline">\(w \in c[\phi \lor\psi] \\ \textrm{iff } w \in c[\phi]\textrm{ or }w \in (c[\lnot \phi])[\psi] \\ \textrm{iff } {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true or } {[\hspace{-.02in}[{\psi}]\hspace{-.02in}]}^{w,c{[\hspace{-.02in}[{\lnot \phi}]\hspace{-.02in}]}}\textrm{ is true} \\ \textrm{iff } w \in c{[\hspace{-.02in}[{\phi \lor \psi}]\hspace{-.02in}]}\)</span></p>
 </dd>
 <dt>Necessity Modal</dt>
-<dd><p><span class="math inline">\(w \in c[\Box \phi]\\ \textrm{iff } w \in c\textrm{ and }c[\phi] = c \\ \textrm{iff } \forall w \in c, w \in c[\phi] \\ \textrm{iff } \forall w \in c, w \in c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]} \\ \textrm{iff } \forall w \in c, {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } w \in c {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}\)</span></p>
+<dd><p><span class="math inline">\(w \in c[\Box \phi]\\ \textrm{iff } c[\phi] = c \\ \textrm{iff } \forall w \in c, w \in c[\phi] \\ \textrm{iff } \forall w \in c, w \in c{[\hspace{-.02in}[{\phi}]\hspace{-.02in}]} \\ \textrm{iff } \forall w \in c, {[\hspace{-.02in}[{\phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}^{w,c}\textrm{ is true}\\ \textrm{iff } w \in c {[\hspace{-.02in}[{\Box \phi}]\hspace{-.02in}]}\)</span></p>
 </dd>
 <dt>Possibility Modal</dt>
 <dd><p>Follows from previous proofs since defined in terms of necessity modal and negation.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
@@ -123,7 +123,7 @@ counter"></a>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Thanks to Matt Mandelkern for a few corrections on this proof.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Thanks to Matt Mandelkern for a few corrections.<a href="#fnref1">↩</a></p></li>
 </ol>
 </section>
 </body>
