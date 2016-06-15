@@ -4,9 +4,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
+  <meta name="author" content="Daniel Rothschild" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="http://dynsem.github.io/my.css" type="text/css" />
+  <link rel="stylesheet" href="my.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <div id="nav">
@@ -17,7 +19,7 @@
 <li class="navigation dropdown">
 <a href="#" class="navigation dropbtn">Notes</a>
 <div class="dropdown-content">
-<p><a href="dc.html">Dynamic Contexts</a> <a href="hdpl.html">Heim and Dynamic Predicate Logic</a> <a href="veltman.html">Veltman’s Epistemic Modals</a> <a href="vy.html">Veltman/Yalcin comparison</a></p>
+<p><a href="dc.html">Dynamic Contexts</a> <a href="hdpl.html">Heim and Dynamic Predicate Logic</a> <a href="veltman.html">Veltman's Epistemic Modals</a> <a href="vy.html">Veltman/Yalcin comparison</a></p>
 </div>
 <li class="navigation active">
 <a class = "navigation" href="hdpl.html">Heim and Dynamic Predicate Logic</a>
@@ -28,10 +30,55 @@
 </ul>
 </div>
 <div id="main">
-<p>In progress…</p>
-</div>
-<div id="refs" class="references">
 
+
+
+
+<h5 id="target-phenomena">Target phenomena</h5>
+<p>Heim's target phenomena is uses of pronouns and indefinites in sentences such as these:</p>
+<ol class="example" style="list-style-type: decimal">
+<li>A man walked in. He wore no socks.</li>
+<li>Every man who owned a donkey beat it.</li>
+</ol>
+<h5 id="syntactic-assumptions">Syntactic assumptions</h5>
+<p>Heim assumes that both indefinite descriptions, e.g, 'a man', definite descriptions, e.g. 'the man', and pronouns are syntactically free variables. So the logical form of the above sentnence (1) would be:</p>
+<ol start="3" class="example" style="list-style-type: decimal">
+<li><span class="math inline">\(M(x) \&amp; W(x). N(x).\)</span></li>
+</ol>
+<p>Sentence (2) looks like this, as quantifiers are treated syntactically as binary operators.</p>
+<ol start="4" class="example" style="list-style-type: decimal">
+<li><span class="math inline">\(\text{every}(M(x)\&amp; D(y) \&amp; O(x,y) , B(x,y))\)</span></li>
+</ol>
+<p>Indefinites and definites have different features which are not semantically evaluated, but rather lead to presuppositions.</p>
+<h5 id="semantics">Semantics</h5>
+<p>As described <a href="dc.html">before</a>, we will treat context as sets of pairs of partial assignment functions and worlds. This makes Heim's <span class="citation">(<a href="#ref-HeimDiss">1982</a>)</span> system closer to that which later developed in the dynamic semantics literature such as <span class="citation">Groenendijk, Stokhof, and Veltman (<a href="#ref-GSVCoreference">1996</a>)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>When new variables are used, the context needs to be altered to allow the assignment function to be defined for these varialbes. We will define the following operation for 'freeing' the varaibles <span class="math inline">\(x_1 \ldots x_n\)</span> in a context <span class="math inline">\(c\)</span>:</p>
+<p><span class="math inline">\(c[x_1 \ldots x_n] = \{ \langle f, w \rangle : f&#39; \in c,\)</span> <span class="math inline">\(\exists \langle o_1\ldots o_n \in D \times \ldots \times D\)</span> and <span class="math inline">\(f\)</span> is like <span class="math inline">\(f\)</span> except for each <span class="math inline">\(i\)</span>, <span class="math inline">\(1 \leq i \leq n, f(x_i) = o_n \}\)</span></p>
+<p>We also define a binary relation of assignment function as follows:</p>
+<p><span class="math inline">\(f \geq f&#39;\)</span> if <span class="math inline">\(f\)</span> agrees with <span class="math inline">\(f&#39;\)</span> in the domain of <span class="math inline">\(f&#39;\)</span> (but <span class="math inline">\(f&#39;\)</span> may have a greater domain)</p>
+<p>Our semantic rules are as follows:</p>
+<p><span class="math inline">\(c[R(x\ldots x_n)] = \{ \langle w.f \rangle \in c&#39;: R(f(x) \ldots f(x_n))\)</span> at <span class="math inline">\(w\}\)</span><br />
+where <span class="math inline">\(c&#39;\)</span> = <span class="math inline">\(c[y_1 \ldots y_j]\)</span> where <span class="math inline">\(y_1 \ldots y_j\)</span> are the variables in <span class="math inline">\(x_1 \ldots x_n\)</span> that are not defined in <span class="math inline">\(c\)</span>.</p>
+<p><span class="math inline">\(c[\phi \&amp; \psi] = c[\phi][\psi]\)</span></p>
+<p><span class="math inline">\(c[\lnot \phi] = \{ \langle f,w \rangle \in c : \not \exists \langle f&#39; ,w \rangle \in c[\phi]\text{ s.t. } f&#39; \geq f \}\)</span></p>
+<p><span class="math inline">\(c[\text{every}(\phi, \psi)] = \{ \langle f,w \rangle \in c :\text{ for every least $f&#39;$ with respect to}\geq,\)</span> s.t. <span class="math inline">\(f&#39; \geq f, \langle f&#39;,w \rangle \in c[\phi]\)</span> there is some <span class="math inline">\(f&#39;&#39; \geq f&#39;, \langle f&#39;&#39;, w \rangle \in c[\phi][\psi] \}\)</span></p>
+<h5 id="bibliography" class="unnumbered">Bibliography</h5>
+<div id="refs" class="references">
+<div id="ref-GSVCoreference">
+<p>Groenendijk, Jeroen, Martin Stokhof, and Frank Veltman. 1996. “Corefrence and Modality.” In <em>Handbook of Contemporary Semantic Theory</em>, edited by Shalom Lappin. Blackwell.</p>
+</div>
+<div id="ref-HeimDiss">
+<p>Heim, Irene. 1982. “The Semantics of Definite and Indefinite Noun Phrases.” PhD thesis, Amherst: University of Massachusetts. <a href="http://semanticsarchive.net/Archive/Tk0ZmYyY/" class="uri">http://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.</p>
+</div>
+<div id="ref-YalcinDynamic">
+<p>Yalcin, Seth. 2013. “Dynamic Semantics.” In <em>Routledge Companion to Philosophy of Language</em>, edited by D. Fara and G Russell. Routledge. <a href="https://dl.dropboxusercontent.com/u/14251569/Published/yalcin-2013-dynamic-notes%20%281%29.pdf">https://dl.dropboxusercontent.com/u/14251569/Published/yalcin-2013-dynamic-notes%20%281%29.pdf</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>See also <span class="citation">Yalcin (<a href="#ref-YalcinDynamic">2013</a>)</span> for a similar presentation of Heim, but using her representations for files.<a href="#fnref1">↩</a></p></li>
+</ol>
 </div>
 </body>
 </html>
