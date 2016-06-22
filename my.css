@@ -1,4 +1,4 @@
-
+ 
 
 @media print {
   *,
@@ -112,7 +112,7 @@ p,
   margin-bottom: 1.3rem;
 }
 
-h1,
+/*h1,
 .modest-h1,
 h2,
 .modest-h2,
@@ -123,7 +123,7 @@ h4,
   margin: 1.414rem 0 .5rem;
   font-weight: inherit;
   line-height: 1.42;
-}
+}*/
 
 h1,
 .modest-h1 {

@@ -31,9 +31,7 @@
 </div>
 <div id="main">
 
-
-
-
+<h4 id="heim">Heim</h4>
 <h5 id="target-phenomena">Target phenomena</h5>
 <p>Heim's target phenomena is uses of pronouns and indefinites in sentences such as these:</p>
 <ol class="example" style="list-style-type: decimal">
@@ -51,7 +49,7 @@
 </ol>
 <p>Indefinites and definites have different features which are not semantically evaluated, but rather lead to presuppositions.</p>
 <h5 id="semantics">Semantics</h5>
-<p>As described <a href="dc.html">before</a>, we will treat context as sets of pairs of partial assignment functions and worlds. This makes Heim's <span class="citation">(<a href="#ref-HeimDiss">1982</a>)</span> system closer to that which later developed in the dynamic semantics literature such as <span class="citation">Groenendijk, Stokhof, and Veltman (<a href="#ref-GSVCoreference">1996</a>)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>As described <a href="dc.html">before</a>, we will treat context as sets of pairs of partial assignment functions and worlds. This makes Heim's <span class="citation">(<a href="#ref-HeimDiss">1982</a><a href="#ref-HeimDiss">a</a>)</span> system closer to that which later developed in the dynamic semantics literature such as <span class="citation">Groenendijk, Stokhof, and Veltman (<a href="#ref-GSVCoreference">1996</a>)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 <p>When new variables are used, the context needs to be altered to allow the assignment function to be defined for these varialbes. We will define the following operation for 'freeing' the varaibles <span class="math inline">\(x_1 \ldots x_n\)</span> in a context <span class="math inline">\(c\)</span>:</p>
 <p><span class="math inline">\(c[x_1 \ldots x_n] = \{ \langle f, w \rangle : f&#39; \in c,\)</span> <span class="math inline">\(\exists \langle o_1\ldots o_n \in D \times \ldots \times D\)</span> and <span class="math inline">\(f\)</span> is like <span class="math inline">\(f\)</span> except for each <span class="math inline">\(i\)</span>, <span class="math inline">\(1 \leq i \leq n, f(x_i) = o_n \}\)</span></p>
 <p>We also define a binary relation of assignment function as follows:</p>
@@ -62,13 +60,49 @@ where <span class="math inline">\(c&#39;\)</span> = <span class="math inline">\(
 <p><span class="math inline">\(c[\phi \&amp; \psi] = c[\phi][\psi]\)</span></p>
 <p><span class="math inline">\(c[\lnot \phi] = \{ \langle f,w \rangle \in c : \not \exists \langle f&#39; ,w \rangle \in c[\phi]\text{ s.t. } f&#39; \geq f \}\)</span></p>
 <p><span class="math inline">\(c[\text{every}(\phi, \psi)] = \{ \langle f,w \rangle \in c :\text{ for every least $f&#39;$ with respect to}\geq,\)</span> s.t. <span class="math inline">\(f&#39; \geq f, \langle f&#39;,w \rangle \in c[\phi]\)</span> there is some <span class="math inline">\(f&#39;&#39; \geq f&#39;, \langle f&#39;&#39;, w \rangle \in c[\phi][\psi] \}\)</span></p>
+<h4 id="dynamic-predicate-logic">Dynamic Predicate Logic</h4>
+<h5 id="compositionality">Compositionality</h5>
+<p>Groenendijk and Stokhof present their dynamic predicate logic as the first <em>compositional</em> dynamic semantics. They write that no previous semantics in this vein (including Heim’s FCS) “makes compositionally its starting point”, and then they qualify this with the parenthetic remark that “it seems that Heim [1982, Ch.3], does attach some value to compositionality.” This is uncharitable, as Heim’s semantic system is clearly and straightforwardly compositional. One would think would think given the importance they accord to compositionality they would explain what lack of compositionality they found in Heim’s work. In fact, Groenendijk and Stokhof do not discuss Heim’s semantics at all, saying that they “feel justified in restricting comparison to just [Kamp’s DRT ]” since it is the most “formally explicit” theory in this area. As any careful reader of Heim (<span class="citation">(<a href="#ref-heim82">1982</a><a href="#ref-heim82">b</a>)</span>, Ch 3, <span class="citation">(<a href="#ref-HeimFile">1983</a>)</span>) is aware, the basic semantics there is precise or explicit. The suggestion that Heim’s work need not be discussed in this context due to any lack of formal rigor is bizarre. The truth is quite simple: Heim gave a compositional dynamic semantics in her 1982 dissertation (though the term <em>dynamic semantics</em> was not yet in currency) and, seven years later, Groenendijk and Stokhof published a different compositional, dynamic semantics. The interest and importance of their work is clear: it does not, however, rest in its claim to being the first compositional dynamic semantics.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<h5 id="syntax">Syntax</h5>
+<p>The syntax of DPL is simply that of first-order logic. The main difference from Heim (besides the absence of any two place quantifiers) is thus the presence of exisetential quantifier <span class="math inline">\(\exists x\)</span>. In DPL then something like this:</p>
+<ol start="5" class="example" style="list-style-type: decimal">
+<li>A man walked in. He ordered a drink.</li>
+</ol>
+<p>is understood as having the following logical form:</p>
+<ol start="6" class="example" style="list-style-type: decimal">
+<li><span class="math inline">\(\exists x (Mx \&amp; Wx). Dx\)</span></li>
+</ol>
+<h5 id="semantics-1">Semantics</h5>
+<p>Here is DPL, we will relativize to a world <span class="math inline">\(w\)</span> to make clear the relationship between DPL and FCS:</p>
+<p><span class="math inline">\({ {[\hspace{-.02in}[}{P(x)}{]\hspace{-.02in}]}}^w = \{ {\langle g, g \rangle} : g(x)\)</span> is a <span class="math inline">\(P\)</span> in <span class="math inline">\(w \}\)</span><br />
+<span class="math inline">\({ {[\hspace{-.02in}[}{\lnot \phi}{]\hspace{-.02in}]}}^w = \{ {\langle g, g \rangle}: \not \exists h : {\langle g,h \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \}\)</span><br />
+<span class="math inline">\({ {[\hspace{-.02in}[}{\exists x \phi}{]\hspace{-.02in}]}}^w = \{ {\langle g, h \rangle}: \exists k: k[x]g \ \&amp; \ {\langle k,h \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \}\)</span><br />
+<span class="math inline">\({ {[\hspace{-.02in}[}{\phi \land \psi}{]\hspace{-.02in}]}}^w = \{ {\langle g,h \rangle} : \exists k : {\langle g,k \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \  \&amp; \ {\langle k,h \rangle} \in { {[\hspace{-.02in}[}{\psi}{]\hspace{-.02in}]}}^w\}\)</span></p>
+<p>Let us define DPL-contexts as sets of assignment worlds (not allowing partiality). We can then define DPL-update as follows. For a DPL-context (DPL contexts are sets of pairs of total assignment functions and worlds) <span class="math inline">\(c\)</span> and a formula in DPL <span class="math inline">\(\phi\)</span>:</p>
+<p><span class="math inline">\(c[\phi] = \{ {\langle g,w \rangle} : \exists {\langle h,w \rangle} \in c \ \&amp; \ {\langle h,g \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \}\)</span></p>
+<p>The empty context here could be defined as follows (though we can consider other options as well): <span class="math inline">\(c_\emptyset = \{ {\langle g,w \rangle} : g\)</span> is an assignment function and $ w W}$.</p>
 <h5 id="bibliography" class="unnumbered">Bibliography</h5>
 <div id="refs" class="references">
+<div id="ref-DekkerVariables">
+<p>Dekker, Paul. 1996. “The Values of Variables in Dynamic Semantics.” <em>Linguistics and Philosophy</em> 19: 211–57.</p>
+</div>
+<div id="ref-GeurtsBeaverDRT">
+<p>Geurts, Bart, and David I. Beaver. 2011. “Discourse Representation Theory.” In <em>The Stanford Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, Fall 2011.</p>
+</div>
 <div id="ref-GSVCoreference">
 <p>Groenendijk, Jeroen, Martin Stokhof, and Frank Veltman. 1996. “Corefrence and Modality.” In <em>Handbook of Contemporary Semantic Theory</em>, edited by Shalom Lappin. Blackwell.</p>
 </div>
 <div id="ref-HeimDiss">
-<p>Heim, Irene. 1982. “The Semantics of Definite and Indefinite Noun Phrases.” PhD thesis, Amherst: University of Massachusetts. <a href="http://semanticsarchive.net/Archive/Tk0ZmYyY/" class="uri">http://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.</p>
+<p>Heim, Irene. 1982a. “The Semantics of Definite and Indefinite Noun Phrases.” PhD thesis, Amherst: University of Massachusetts. <a href="http://semanticsarchive.net/Archive/Tk0ZmYyY/" class="uri">http://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.</p>
+</div>
+<div id="ref-heim82">
+<p>———. 1982b. “The Semantics of Definite and Indefinite Noun Phrases.” PhD thesis, Amherst: University of Massachusetts. <a href="http://semanticsarchive.net/Archive/Tk0ZmYyY/" class="uri">http://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.</p>
+</div>
+<div id="ref-HeimFile">
+<p>———. 1983. “File Change Semantics and the Familiarity Theory of Definiteness.” In <em>Meaning, Use, and Interpretation of Language</em>, edited by Christoph Schwarze Rainer Bäuerle and Arnim von Stechow. Walter de Gruyter.</p>
+</div>
+<div id="ref-JagerDiss">
+<p>Jäger, Gerhard. 1996. “Topics in Dynamic Semantics.” PhD thesis, Humbolt University Berlin.</p>
 </div>
 <div id="ref-YalcinDynamic">
 <p>Yalcin, Seth. 2013. “Dynamic Semantics.” In <em>Routledge Companion to Philosophy of Language</em>, edited by D. Fara and G Russell. Routledge. <a href="https://dl.dropboxusercontent.com/u/14251569/Published/yalcin-2013-dynamic-notes%20%281%29.pdf">https://dl.dropboxusercontent.com/u/14251569/Published/yalcin-2013-dynamic-notes%20%281%29.pdf</a>.</p>
@@ -78,6 +112,7 @@ where <span class="math inline">\(c&#39;\)</span> = <span class="math inline">\(
 <hr />
 <ol>
 <li id="fn1"><p>See also <span class="citation">Yalcin (<a href="#ref-YalcinDynamic">2013</a>)</span> for a similar presentation of Heim, but using her representations for files.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I emphasize this point since some later commentators have followed Groenendijk and Stokhof in suggesting Heim’s account is somehow not overtly compositional: <span class="citation">Geurts and Beaver (<a href="#ref-GeurtsBeaverDRT">2011</a>)</span> label Heim’s semantics as “intended to be compositional” with no further explanation, <span class="citation">Dekker (<a href="#ref-DekkerVariables">1996</a>)</span>, while noting that Heim anticipates Groenendijk and Stokhof, describes her as only doing so “implicitly”, saying that the compositional presentation is “wrapped up in the representational metaphor of changing files and file cards”—as if presenting a helpful metaphor obscures the technical account. <span class="citation">Jäger (<a href="#ref-JagerDiss">1996</a>)</span> makes some interesting, and accurate, comments about how Heim’s semantics lacks certain forms of compositionality, but these relate to her felicity conditions on definiteness and the particular level of syntactic representation she works at, and so seem orthogonal to any concerns Groenendijk and Stokhof might have had.<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
 </body>
