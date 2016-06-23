@@ -8,6 +8,7 @@
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="my.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <div id="nav">
@@ -31,10 +32,46 @@
 <div id="main">
 
 
-
-
 <h5 id="introduction">Introduction</h5>
-<p>This section introduces a fragment that combines the treatment of anaphora in Heim and DPL with Veltman's treatment of epistemic modality. The semantics given is a simplified version of <span class="citation">Groenendijk, Stokhof, and Veltman (<a href="#ref-GSVCoreference">1996</a>)</span>.</p>
+<p>This section introduces a fragment that combines the treatment of anaphora in Heim and DPL with Veltman's treatment of epistemic modality. The semantics given is a simplified version of <span class="citation">Groenendijk, Stokhof, and Veltman (<a href="#ref-GSVCoreference">1996</a>)</span>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<h5 id="gsvs-epistemic-modal">GSV's epistemic modal</h5>
+<p>We take our notion of file as <a href="dc.html">before</a> and define a version of <a href="veltman.html">Veltman's epistemic modal</a> with this notion. Here is the most straightforward way of doing so, due to <span class="citation">Groenendijk, Stokhof, and Veltman (<a href="#ref-GSVCoreference">1996</a>)</span>:</p>
+<p><span class="math inline">\(c[\Diamond \phi] = \{ { \langle{f,w}\rangle} \in c : c[\phi] \neq \emptyset \}\)</span></p>
+<p>On this definition we simply test to see if <span class="math inline">\(c\)</span> survives the update with <span class="math inline">\(\phi\)</span>, if so <span class="math inline">\(c\)</span> remains unchanged, otherwise we get the emptyset.</p>
+<h5 id="modals-and-quantifiers">Modals and quantifiers</h5>
+<p>Note first that the two definitions for existential quantifiers <a href="genquant.html">canvassed here</a> lead to different results with epistemic modals. The first definition calculates <span class="math inline">\(c[\exists x \phi]\)</span> by first creating a new context with <span class="math inline">\(x\)</span> free and then applying <span class="math inline">\(\phi\)</span>. Call this <em>lumping</em>:</p>
+<p><span class="math inline">\(c [\exists_l x \phi] = \ldots\)</span><br />
+<span class="math inline">\(\begin{cases} \# \text{ if $x$  in domain of $c$}\\ \{ { \langle{f&#39;,w}\rangle} \in c : \exists { \langle{f&#39;,w}\rangle} \in c \exists o, f&#39;(x) = o \text{ and } f[x]f&#39;\}[\phi] \text{ otherwise} \end{cases}\)</span></p>
+<p>The second definition, takes each assignment of <span class="math inline">\(x\)</span> in <span class="math inline">\(c\)</span> and applies <span class="math inline">\(\phi\)</span> to that new context and then unions the result:</p>
+<p><span class="math inline">\(c [\exists_s x \phi] = \begin{cases} \# \text{ if any of $x$  in domain of $c$}\\ \bigcup_{o \in D} (\{ { \langle{f,w}\rangle} : \exists { \langle{f&#39;,w}\rangle} \in c, f&#39;(x) = o \text{ and } f[x]f&#39;\}[\phi]) \end{cases}\)</span></p>
+<p>Call that <em>slicing</em> <span class="citation">(following Aloni <a href="#ref-AloniQuantification">2001</a>)</span>.</p>
+<p>Consider a file, <span class="math inline">\(d\)</span>, in which there 2 individuals <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, and one world where <span class="math inline">\(a\)</span> is an <span class="math inline">\(F\)</span> and <span class="math inline">\(b\)</span> is not an <span class="math inline">\(F\)</span>. Note that <span class="math inline">\(d[\exists_l x Fx] = d\)</span> while <span class="math inline">\(\exists_s Fx = \emptyset\)</span>.</p>
+<h5 id="gsvs-boy-hiding-case">GSV's boy hiding case:</h5>
+<p>GSV give this nice (if subtle) example which supports the latter treatment of exisetntial quantification in combination with their epistemic modal:</p>
+<blockquote>
+<p>Imagine the following situation. You and your spouse have three sons. One of them broke a vase. Your spouse is very anxious to find out who did it. Both you and your spouse know that your eldest didn’t do it, he was playing outside when it must have happened. Actually, you are not interested in the question who broke the vase. But you are looking for your eldest son to help you do the dishes. He might be hiding somewhere. In search for the culprit, your spouse has gone upstairs. Suppose your spouse hears a noise coming from the closet. If it is the shuffling of feet, your spouse will know that someone is hiding in there, but will not be able to exclude any of your three sons. In that case your spouse could utter: <br />
+(16) There is someone hiding in the closet. He might be guilty.<br />
+<span class="math inline">\(\exists Qx \land \Diamond Px\)</span>  <br />
+But the information state of your spouse would not support:<br />
+(17) There is someone hiding in the closet who might be guilty.<br />
+<span class="math inline">\(\exists x (Qx \land \Diamond Px)\)</span>  <br />
+If the situation is slightly changed, and it is imagined that the noise your spouse hears is a high-pitched voice, things are different. Now, your spouse knows it can not be your eldest, he already has a frog in his throat. In that case your spouse can say (17).<br />
+This also means that if your spouse yells (17) from upstairs, you can stay were you are, but if it is (16), you might run upstairs to check whether it is perhaps your aid that is hiding there.</p>
+</blockquote>
+<h5 id="contradictions">Contradictions</h5>
+<p><span class="citation">Yalcin (<a href="#ref-YalcinEMDR">2015</a>)</span> notes that sentences like this sound contradictory:</p>
+<ol class="example" style="list-style-type: decimal">
+<li>An infected man might not be infected.</li>
+</ol>
+<p>This is easily predicted with various differen logical forms. One example is <span class="math inline">\(\exists x Ix \&amp; \Diamond \lnot Ix\)</span>.</p>
+<p>Similarly if we treat the generalized quantifiers <a href="genquant.html">as suggested</a> we can derive the deviance of the following sentences:</p>
+<ol start="2" class="example" style="list-style-type: decimal">
+<li>Most people who are infected might not be.</li>
+</ol>
+<p>However we do derive that the following sentence is fine:</p>
+<ol start="3" class="example" style="list-style-type: decimal">
+<li>Someone who might be infected is not infected.</li>
+</ol>
 <h4 id="bibliography">Bibliography</h4>
 <!-- Start of StatCounter Code for BBEdit (Mac) -->
 <script type="text/javascript">
@@ -58,9 +95,24 @@ counter"></a>
 </noscript>
 <!-- End of StatCounter Code for BBEdit (Mac) -->
 <div id="refs" class="references">
+<div id="ref-AloniQuantification">
+<p>Aloni, Maria. 2001. “Quantification Under Conceptual Covers.” PhD thesis, University of Amsterdam.</p>
+</div>
+<div id="ref-BeaverPresupposition">
+<p>Beaver, David. 2001. <em>Presupposition and Assertion in Dynamic Semantics</em>. CSLI. <a href="https://webspace.utexas.edu/dib97/silli.pdf" class="uri">https://webspace.utexas.edu/dib97/silli.pdf</a>.</p>
+</div>
 <div id="ref-GSVCoreference">
 <p>Groenendijk, Jeroen, Martin Stokhof, and Frank Veltman. 1996. “Corefrence and Modality.” In <em>Handbook of Contemporary Semantic Theory</em>, edited by Shalom Lappin. Blackwell.</p>
 </div>
+<div id="ref-YalcinEMDR">
+<p>Yalcin, Seth. 2015. “Epistemic Modality <em>de Re</em>.” <em>Ergo</em> 2 (19): 475–527.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>See also <span class="citation">Beaver (<a href="#ref-BeaverPresupposition">2001</a>)</span>, <span class="citation">Aloni (<a href="#ref-AloniQuantification">2001</a>)</span> and <span class="citation">Yalcin (<a href="#ref-YalcinEMDR">2015</a>)</span><a href="#fnref1">↩</a></p></li>
+</ol>
 </div>
 </body>
 </html>

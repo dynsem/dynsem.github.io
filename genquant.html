@@ -36,8 +36,8 @@
 <h5 id="semantics-without-generalized-quantifiers">Semantics without generalized quantifiers</h5>
 <p>We use the same notion of context as <a href="dc.html">before</a>. Here are our semantics for the fragment with the syntax of predicate logic, based loosely on Heim and DPL</p>
 <p><span class="math inline">\(c[R(x_1 \ldots x_n)] = \begin{cases} \# \text{ if any of $x_1 \ldots x_n$ not in domain of $c$}\\ \{ { \langle{f,w}\rangle} \in c : \langle f(x_1),\ldots , f(x_n) \rangle \in R_w \} \text{ otherwise} \end{cases}\)</span></p>
-<p><span class="math inline">\(c [\exists x] = \ldots\)</span><br />
-<span class="math inline">\(\begin{cases} \# \text{ if $x$  in domain of $c$}\\ \{ { \langle{f&#39;,w}\rangle} \in c : \exists { \langle{f&#39;,w}\rangle} \in c \exists o, f&#39;(x) = o \text{ and } f[x]f&#39;\} \text{ otherwise} \end{cases}\)</span></p>
+<p><span class="math inline">\(c [\exists x \phi] = \ldots\)</span><br />
+<span class="math inline">\(\begin{cases} \# \text{ if $x$  in domain of $c$}\\ \{ { \langle{f&#39;,w}\rangle} \in c : \exists { \langle{f&#39;,w}\rangle} \in c \exists o, f&#39;(x) = o \text{ and } f[x]f&#39;\}[\phi] \text{ otherwise} \end{cases}\)</span></p>
 <p><span class="math inline">\(c[\lnot \phi] = \{ { \langle{f,w}\rangle} \in c : \not \exists { \langle{f&#39;,w}\rangle} \in c[\phi] : {\langle{f&#39;,w}\rangle} \geq { \langle{f,w}\rangle} \}\)</span> <span class="math inline">\(c[\phi \land \psi] = c[\phi][\psi]\)</span></p>
 <p>Alternative existential quantification <span class="citation">(Groenendijk, Stokhof, and Veltman <a href="#ref-GSVCoreference">1996</a>; Beaver <a href="#ref-BeaverVariables">1994</a>)</span>:</p>
 <p><span class="math inline">\(c [\exists x \phi] = \begin{cases} \# \text{ if any of $x$  in domain of $c$}\\ \bigcup_{o \in D} (\{ { \langle{f,w}\rangle} : \exists { \langle{f&#39;,w}\rangle} \in c, f&#39;(x) = o \text{ and } f[x]f&#39;\}[\phi]) \end{cases}\)</span></p>
