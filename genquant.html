@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Daniel Rothschild" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="my.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="nav">
+<ul class = "navigation">
+<li class="navigation">
+<a class = "navigation"  href="index.html">Dynamics of Conversation</a>
+</li>
+<li class="navigation dropdown">
+<a href="#" class="navigation dropbtn">Notes</a>
+<div class="dropdown-content">
+<p><a href="dc.html">Dynamic Contexts</a> <a href="hdpl.html">Heim and Dynamic Predicate Logic</a> <a href="veltman.html">Veltman's Epistemic Modals</a> <a href="vy.html">Veltman/Yalcin comparison</a> <a href="genquant.html">Generalized Quantifiers</a> <a href="gsv.html">Quantifiers and Modals</a></p>
+</div>
+<li class="navigation active">
+<a class = "navigation" href="genquant.html">Generalized Quantifiers</a>
+</li>
+<li class="navigation" style="float:right">
+<a  class = "navigation" href="http://danielrothschild.com/">Daniel Rothschild</a>
+</li>
+</ul>
+</div>
+<div id="main">
+
+<h5 id="introduction">Introduction</h5>
+<p>This section introduces a simple way of adding generalized quantifiers to dynamic semantics.</p>
+<h5 id="semantics-without-generalized-quantifiers">Semantics without generalized quantifiers</h5>
+<p>We use the same notion of context as <a href="dc.html">before</a>. Here are our semantics for the fragment with the syntax of predicate logic, based loosely on Heim and DPL</p>
+<p><span class="math inline">\(c[R(x_1 \ldots x_n)] = \begin{cases} \# \text{ if any of $x_1 \ldots x_n$ not in domain of $c$}\\ \{ { \langle{f,w}\rangle} \in c : \langle f(x_1),\ldots , f(x_n) \rangle \in R_w \} \text{ otherwise} \end{cases}\)</span></p>
+<p><span class="math inline">\(c [\exists x] = \ldots\)</span><br />
+<span class="math inline">\(\begin{cases} \# \text{ if $x$  in domain of $c$}\\ \{ { \langle{f&#39;,w}\rangle} \in c : \exists { \langle{f&#39;,w}\rangle} \in c \exists o, f&#39;(x) = o \text{ and } f[x]f&#39;\} \text{ otherwise} \end{cases}\)</span></p>
+<p><span class="math inline">\(c[\lnot \phi] = \{ { \langle{f,w}\rangle} \in c : \not \exists { \langle{f&#39;,w}\rangle} \in c[\phi] : {\langle{f&#39;,w}\rangle} \geq { \langle{f,w}\rangle} \}\)</span> <span class="math inline">\(c[\phi \land \psi] = c[\phi][\psi]\)</span></p>
+<p>Alternative existential quantification <span class="citation">(Groenendijk, Stokhof, and Veltman <a href="#ref-GSVCoreference">1996</a>; Beaver <a href="#ref-BeaverVariables">1994</a>)</span>:</p>
+<p><span class="math inline">\(c [\exists x \phi] = \begin{cases} \# \text{ if any of $x$  in domain of $c$}\\ \bigcup_{o \in D} (\{ { \langle{f,w}\rangle} : \exists { \langle{f&#39;,w}\rangle} \in c, f&#39;(x) = o \text{ and } f[x]f&#39;\}[\phi]) \end{cases}\)</span></p>
+<h5 id="adding-generalized-quantifiers">Adding generalized quantifiers</h5>
+<p>Assuming we associated with each quantifier <span class="math inline">\(Q\)</span> a binary relation on sets, <span class="math inline">\(B_Q\)</span>. Relative to a restrictor <span class="math inline">\(\phi\)</span>, and matrix, <span class="math inline">\(\psi\)</span>, a context <span class="math inline">\(c\)</span>, an assignment-world <span class="math inline">\({ \langle{f,w}\rangle}\)</span> and a variable <span class="math inline">\(x\)</span> we'll define the restrictor set <span class="math inline">\(R(\phi,c,f,w, x)\)</span> and matrix set <span class="math inline">\(M(\phi,\psi, c,f,w, x)\)</span>:</p>
+<p><span class="math inline">\(R(\phi,c,f,w, x) = \{o : { \langle{f,w}\rangle}\)</span> survives in <span class="math inline">\(c_{x\to o}[\phi] \}\)</span><br />
+<span class="math inline">\(M(\phi, \psi,c,f,w, x) = \{o : { \langle{f,w}\rangle}\)</span> survives in <span class="math inline">\(c_{x\to o}[\phi][\psi] \}\)</span></p>
+<p>Now we can give a general definition of dynamic quantifiers as follows:<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p><span class="math inline">\(c[Q_x(\phi, \psi)] = \{ { \langle{f,w}\rangle} \in c : R(\phi,c,f,w, x) B_Q M(\phi,c,f,w, x) \}\)</span></p>
+<h4 id="bibliography">Bibliography</h4>
+<!-- Start of StatCounter Code for BBEdit (Mac) -->
+<script type="text/javascript">
+var sc_project=11007553; 
+var sc_invisible=1; 
+var sc_security="23a05678"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript>
+<div class="statcounter">
+<a title="create counter"
+href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11007553/0/23a05678/1/" alt="create
+counter"></a>
+</div>
+</noscript>
+<!-- End of StatCounter Code for BBEdit (Mac) -->
+<div id="refs" class="references">
+<div id="ref-BeaverVariables">
+<p>Beaver, David. 1994. “When Variables Don’t Vary Enough.” <em>Semantics and Linguistic Theory (SALT)</em> 4. <a href="https://webspace.utexas.edu/dib97/salt4.pdf" class="uri">https://webspace.utexas.edu/dib97/salt4.pdf</a>.</p>
+</div>
+<div id="ref-BeaverPresupposition">
+<p>———. 2001. <em>Presupposition and Assertion in Dynamic Semantics</em>. CSLI. <a href="https://webspace.utexas.edu/dib97/silli.pdf" class="uri">https://webspace.utexas.edu/dib97/silli.pdf</a>.</p>
+</div>
+<div id="ref-GSVCoreference">
+<p>Groenendijk, Jeroen, Martin Stokhof, and Frank Veltman. 1996. “Corefrence and Modality.” In <em>Handbook of Contemporary Semantic Theory</em>, edited by Shalom Lappin. Blackwell.</p>
+</div>
+<div id="ref-NouwenPlural">
+<p>Nouwen, Rick. 2003. <em>Plural Pronominal Anaphora in Context</em>. Netherlands Graduate School of Linguistics Dissertations 84. LOT.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This ignores their dynamic effects see <span class="citation">Beaver (<a href="#ref-BeaverPresupposition">2001</a>)</span> and, especially, <span class="citation">Nouwen (<a href="#ref-NouwenPlural">2003</a>)</span> for appropriate expansions.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

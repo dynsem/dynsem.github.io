@@ -19,7 +19,7 @@
 <li class="navigation dropdown">
 <a href="#" class="navigation dropbtn">Notes</a>
 <div class="dropdown-content">
-<p><a href="dc.html">Dynamic Contexts</a> <a href="hdpl.html">Heim and Dynamic Predicate Logic</a> <a href="veltman.html">Veltman's Epistemic Modals</a> <a href="vy.html">Veltman/Yalcin comparison</a></p>
+<p><a href="dc.html">Dynamic Contexts</a> <a href="hdpl.html">Heim and Dynamic Predicate Logic</a> <a href="veltman.html">Veltman's Epistemic Modals</a> <a href="vy.html">Veltman/Yalcin comparison</a> <a href="genquant.html">Generalized Quantifiers</a> <a href="gsv.html">Quantifiers and Modals</a></p>
 </div>
 <li class="navigation active">
 <a class = "navigation" href="hdpl.html">Heim and Dynamic Predicate Logic</a>
@@ -78,9 +78,9 @@ where <span class="math inline">\(c&#39;\)</span> = <span class="math inline">\(
 <span class="math inline">\({ {[\hspace{-.02in}[}{\lnot \phi}{]\hspace{-.02in}]}}^w = \{ {\langle g, g \rangle}: \not \exists h : {\langle g,h \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \}\)</span><br />
 <span class="math inline">\({ {[\hspace{-.02in}[}{\exists x \phi}{]\hspace{-.02in}]}}^w = \{ {\langle g, h \rangle}: \exists k: k[x]g \ \&amp; \ {\langle k,h \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \}\)</span><br />
 <span class="math inline">\({ {[\hspace{-.02in}[}{\phi \land \psi}{]\hspace{-.02in}]}}^w = \{ {\langle g,h \rangle} : \exists k : {\langle g,k \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \  \&amp; \ {\langle k,h \rangle} \in { {[\hspace{-.02in}[}{\psi}{]\hspace{-.02in}]}}^w\}\)</span></p>
-<p>Let us define DPL-contexts as sets of assignment worlds (not allowing partiality). We can then define DPL-update as follows. For a DPL-context (DPL contexts are sets of pairs of total assignment functions and worlds) <span class="math inline">\(c\)</span> and a formula in DPL <span class="math inline">\(\phi\)</span>:</p>
+<p>Let us define DPL-contexts as sets of assignment worlds (not allowing partiality).<br />
+The empty context here could be defined as follows (though we can consider other options as well): <span class="math inline">\(c_\emptyset = \{ {\langle g,w \rangle} : g\)</span> is an assignment function and $ w W}$. We can then define DPL-update as follows. For a DPL-context <span class="math inline">\(c\)</span> and a formula in DPL <span class="math inline">\(\phi\)</span>:</p>
 <p><span class="math inline">\(c[\phi] = \{ {\langle g,w \rangle} : \exists {\langle h,w \rangle} \in c \ \&amp; \ {\langle h,g \rangle} \in { {[\hspace{-.02in}[}{\phi}{]\hspace{-.02in}]}}^w \}\)</span></p>
-<p>The empty context here could be defined as follows (though we can consider other options as well): <span class="math inline">\(c_\emptyset = \{ {\langle g,w \rangle} : g\)</span> is an assignment function and $ w W}$.</p>
 <h5 id="bibliography" class="unnumbered">Bibliography</h5>
 <div id="refs" class="references">
 <div id="ref-DekkerVariables">
