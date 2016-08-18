@@ -73,7 +73,7 @@ pre {
 
 a,
 a:visited {
-  color: #2980b9;
+  color: #007EFE;
 }
 
 a:hover,
@@ -134,26 +134,31 @@ h1,
 h2,
 .modest-h2 {
   font-size: 2.827rem;
+  color: #007EFE;
 }
 
 h3,
 .modest-h3 {
   font-size: 1.999rem;
+  color: #007EFE;
 }
 
 h4,
 .modest-h4 {
   font-size: 1.414rem;
+  color: #007EFE;
 }
 
 h5,
 .modest-h5 {
   font-size: 1.121rem;
+    
 }
 
 h6,
 .modest-h6 {
   font-size: .88rem;
+    
 }
 
 small,
@@ -204,11 +209,11 @@ body {
 }
 
 #nav {
-    background-color: #333;
+    background-color: #007EFE;
 }
 
 .active {
-    background-color: #6E6E6E;
+    background-color: #333;
     color: black;
 }
 
@@ -239,7 +244,7 @@ li a.navigation, .dropbtn {
 }
 
 li a.navigation:hover, .dropdown:hover .dropbtn {
-    background-color: #3498db;
+    background-color: #333;
 }
 
 li.dropdown {
